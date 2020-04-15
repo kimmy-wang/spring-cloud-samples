@@ -1,0 +1,121 @@
+version: '3.3'
+
+services:
+
+  eureka:
+    image: docker.pkg.github.com/upcwangying/spring-cloud-samples/samples-eureka:0.1.0-SNAPSHOT
+    restart: on-failure
+    networks:
+      - samples
+    ports:
+      - "8762:8080"
+    environment:
+      JAVA_OPTS: '-server -Xmx1g'
+      PROFILE: 'default'
+      SERVER_PORT: 8080
+
+  admin:
+    image: docker.pkg.github.com/upcwangying/spring-cloud-samples/samples-admin:0.1.1-SNAPSHOT
+    restart: on-failure
+    networks:
+      - samples
+    ports:
+      - "9093:8080"
+    environment:
+      JAVA_OPTS: '-server -Xmx1g'
+      PROFILE: 'default'
+      SERVER_PORT: 8080
+
+  hystrix-dashboard:
+    image: docker.pkg.github.com/upcwangying/spring-cloud-samples/samples-hystrix-dashboard:0.1.0-SNAPSHOT
+    restart: on-failure
+    networks:
+      - samples
+    ports:
+      - "9094:8080"
+    environment:
+      JAVA_OPTS: '-server -Xmx1g'
+      PROFILE: 'default'
+      SERVER_PORT: 8080
+      EUREKA_SERVER_HOST: 'eureka'
+      EUREKA_SERVER_PORT: 8080
+
+  zuul:
+    image: docker.pkg.github.com/upcwangying/spring-cloud-samples/samples-zuul:0.1.1-SNAPSHOT
+    restart: on-failure
+    networks:
+      - samples
+    ports:
+      - "9090:8080"
+    environment:
+      JAVA_OPTS: '-server -Xmx1g'
+      PROFILE: 'default'
+      SERVER_PORT: 8080
+      EUREKA_SERVER_HOST: 'eureka'
+      EUREKA_SERVER_PORT: 8080
+    depends_on:
+      - eureka
+      - user
+
+  user:
+    image: docker.pkg.github.com/upcwangying/spring-cloud-samples/user-server:0.1.3-SNAPSHOT
+    restart: on-failure
+    networks:
+      - samples
+    ports:
+      - "9095:8080"
+    environment:
+      JAVA_OPTS: '-server -Xmx1g'
+      PROFILE: 'default'
+      SERVER_PORT: 8080
+      EUREKA_SERVER_HOST: 'eureka'
+      EUREKA_SERVER_PORT: 8080
+      ADMIN_HOST: 'admin'
+      ADMIN_PORT: 8080
+    depends_on:
+      - eureka
+      - admin
+
+  product:
+    image: docker.pkg.github.com/upcwangying/spring-cloud-samples/product-server:0.1.3-SNAPSHOT
+    restart: on-failure
+    networks:
+      - samples
+    ports:
+      - "9092:8080"
+    environment:
+      JAVA_OPTS: '-server -Xmx1g'
+      PROFILE: 'default'
+      SERVER_PORT: 8080
+      EUREKA_SERVER_HOST: 'eureka'
+      EUREKA_SERVER_PORT: 8080
+      ADMIN_HOST: 'admin'
+      ADMIN_PORT: 8080
+    depends_on:
+      - eureka
+      - admin
+
+  order:
+    image: docker.pkg.github.com/upcwangying/spring-cloud-samples/order-server:0.1.3-SNAPSHOT
+    restart: on-failure
+    networks:
+      - samples
+    ports:
+      - "9091:8080"
+    environment:
+      JAVA_OPTS: '-server -Xmx1g'
+      PROFILE: 'default'
+      SERVER_PORT: 8080
+      EUREKA_SERVER_HOST: 'eureka'
+      EUREKA_SERVER_PORT: 8080
+      ADMIN_HOST: 'admin'
+      ADMIN_PORT: 8080
+    depends_on:
+      - eureka
+      - admin
+
+networks:
+  samples:
+
+volumes:
+  mydata:

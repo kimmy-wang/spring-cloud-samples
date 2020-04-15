@@ -1,0 +1,120 @@
+spring:
+  application:
+    name: order
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: Pa55Word
+    url: jdbc:mysql://192.168.88.83:3306/samples_order?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+  zipkin:
+    base-url: http://${ZIPKIN_HOST:192.168.88.87}:${ZIPKIN_PORT:9411}
+    discovery-client-enabled: false
+  sleuth:
+    sampler:
+      probability: 1
+  boot:
+    admin:
+      client:
+        url: http://${ADMIN_HOST:192.168.88.87}:${ADMIN_PORT:9093}
+        username: ${ADMIN_USERNAME:admin}
+        password: ${ADMIN_PASSWORD:admin}
+  cloud:
+    nacos:
+      config:
+        namespace: 7433eb3a-afec-42ea-80e3-f33c7d07d57d
+        file-extension: yaml
+        server-addr: ${NACOS_HOST:192.168.88.87}:${NACOS_PORT:8848}
+#      discovery:
+#        namespace: 7433eb3a-afec-42ea-80e3-f33c7d07d57d
+#        server-addr: ${NACOS_HOST:192.168.88.87}:${NACOS_PORT:8848}
+#        metadata:
+#          - env: prod
+  profiles:
+    active: dev
+  # 在 Spring Boot 中, 当用户访问了一个不存在的链接时, Spring 默认会将页面重定向到 **/error** 上, 而不会抛出异常.
+  # 既然如此, 那我们就告诉 Spring Boot, 当出现 404 错误时, 抛出一个异常即可. 在 application.properties 中添加两个配置:
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+
+eureka:
+  client:
+    security:
+      basic:
+        user: admin
+        password: admin
+    service-url:
+      defaultZone: http://${eureka.client.security.basic.user}:${eureka.client.security.basic.password}@${EUREKA_SERVER_HOST:127.0.0.1}:${EUREKA_SERVER_PORT:8762}/eureka/
+  instance:
+    metadata-map:
+      host-mark: running-host
+#      host-mark: gray-host
+
+server:
+  port: ${SERVER_PORT:9091}
+
+feign:
+  client:
+    config:
+      default: # org.springframework.cloud.openfeign.FeignClientProperties
+        connectTimeout: 15000
+        readTimeout: 15000
+  hystrix:
+    enabled: true
+  httpclient: # 默认使用JDK原生的URLConnection发送HTTP请求 page no. 83
+    enabled: false
+  okhttp:
+    enabled: true
+#  compression: #feign开启GZIP压缩相关配置, 注意由于开启压缩之后，Feign之间的调用通过二进制协议进行传输，返回值需要修改为ResponseEntity<byte[]>才能正常显示
+#    strategy:
+#      enabled: true # 开启请求GZIP压缩
+#      mime-types: text/xml, application/xml, application/json # 配置压缩支持的MIME TYPE
+#      min-strategy-size: 2048 # 配置压缩数据大小的下线
+#    response:
+#      enabled: true # 开启响应GZIP压缩
+
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
+
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
+    com.upcwangying.cloud.samples.order.server.service.impl: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    hystrix:
+      stream:
+        enabled: true
+
+hystrix:
+  command:
+    default: # Hystrix配置说明 page no. 128
+      execution:
+#        timeout: # 禁用Hystrix的超时时间 page no. 93
+#          enable: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000
+    HystrixTimeoutController_test:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000
+  stream:
+    maxConcurrentConnections: 10
+  config:
+    stream:
+      maxConcurrentConnections: 50
+  shareSecurityContext: true # page no. 83
+
+swagger:
+  authorization:
+    key-name: 'Authorization'

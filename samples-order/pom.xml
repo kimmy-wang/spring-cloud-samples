@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.upcwangying.cloud.samples</groupId>
+    <artifactId>samples-order</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <name>samples-order</name>
+    <description>订单模块</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>order-common</module>
+        <module>order-client</module>
+        <module>order-server</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+        <spring-cloud-alibaba.version>0.2.2.RELEASE</spring-cloud-alibaba.version>
+        <nacos-client.version>1.0.0</nacos-client.version>
+        <spring-boot-admin.version>2.0.5</spring-boot-admin.version>
+        <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
+        <order-client.version>0.1.0-SNAPSHOT</order-client.version>
+        <product-client.version>0.1.0-SNAPSHOT</product-client.version>
+        <swagger-spring.version>1.9.0.RELEASE</swagger-spring.version>
+
+        <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
+        <docker.image.prefix>docker.pkg.github.com/upcwangying/spring-cloud-samples</docker.image.prefix>
+        <maven.prefix>https://maven.pkg.github.com/upcwangying</maven.prefix>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.upcwangying.cloud.samples</groupId>
+                <artifactId>samples-core</artifactId>
+                <version>${samples-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.upcwangying.cloud.samples.order</groupId>
+                <artifactId>order-common</artifactId>
+                <version>${order-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.upcwangying.cloud.samples.product</groupId>
+                <artifactId>product-client</artifactId>
+                <version>${product-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.spring4all</groupId>
+                <artifactId>swagger-spring-boot-starter</artifactId>
+                <version>${swagger-spring.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>public</id>-->
+<!--            <name>public</name>-->
+<!--            <url>${maven.prefix}/maven-public/</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>maven-snapshots-82</id>-->
+<!--            <name>maven-snapshots-82</name>-->
+<!--            <url>${maven.prefix}/maven-snapshots/</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>public</id>-->
+<!--            <name>public</name>-->
+<!--            <url>${maven.prefix}/maven-public/</url>-->
+<!--        </repository>-->
+<!--        <snapshotRepository>-->
+<!--            <id>maven-snapshots-82</id>-->
+<!--            <name>maven-snapshots-82</name>-->
+<!--            <url>${maven.prefix}/maven-snapshots/</url>-->
+<!--        </snapshotRepository>-->
+<!--    </distributionManagement>-->
+
+</project>
