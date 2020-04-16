@@ -9,6 +9,6 @@ docker run -d -p 9090:8080 --rm \
 -e PROFILE='default' \
 -e SERVER_PORT=8080 \
 -e EUREKA_SERVER_HOST=127.0.0.1 \
-docker.pkg.github.com/upcwangying/spring-cloud-samples/samples-zuul:0.1.0-SNAPSHOT
+registry.cn-qingdao.aliyuncs.com/upcwangying/samples-zuul:0.1.0-SNAPSHOT
 ```
 

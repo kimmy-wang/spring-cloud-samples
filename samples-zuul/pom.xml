@@ -26,7 +26,7 @@
         <spring-cloud-samples.version>1.0.2-SNAPSHOT</spring-cloud-samples.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
-        <docker.image.prefix>docker.pkg.github.com/upcwangying/spring-cloud-samples</docker.image.prefix>
+        <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
         <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
     </properties>
 

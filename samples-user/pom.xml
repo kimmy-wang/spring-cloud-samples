@@ -36,7 +36,7 @@
 
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
         <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
-        <docker.image.prefix>docker.pkg.github.com/upcwangying/spring-cloud-samples</docker.image.prefix>
+        <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
     </properties>
 
     <dependencyManagement>

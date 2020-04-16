@@ -34,7 +34,7 @@
         <swagger-spring.version>1.9.0.RELEASE</swagger-spring.version>
 
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
-        <docker.image.prefix>docker.pkg.github.com/upcwangying/spring-cloud-samples</docker.image.prefix>
+        <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
         <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
     </properties>
 

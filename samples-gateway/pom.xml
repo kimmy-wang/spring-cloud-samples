@@ -20,7 +20,7 @@
         <spring-cloud-alibaba.version>0.2.2.RELEASE</spring-cloud-alibaba.version>
         <nacos-client.version>1.0.0</nacos-client.version>
         <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
-        <docker.image.prefix>docker.pkg.github.com/upcwangying/spring-cloud-samples</docker.image.prefix>
+        <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
         <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
     </properties>
 

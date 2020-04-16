@@ -18,7 +18,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.SR2</spring-cloud.version>
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
-        <docker.image.prefix>docker.pkg.github.com/upcwangying/spring-cloud-samples</docker.image.prefix>
+        <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
         <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
     </properties>
 

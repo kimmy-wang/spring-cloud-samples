@@ -9,5 +9,5 @@ docker run -d -p 9091:8080 --rm \
 -e EUREKA_SERVER_HOST=127.0.0.1 \
 -e ADMIN_HOST=127.0.0.1 \
 -e ADMIN_PORT=9093 \
-docker.pkg.github.com/upcwangying/spring-cloud-samples/order-server:0.1.0-SNAPSHOT
+registry.cn-qingdao.aliyuncs.com/upcwangying/order-server:0.1.0-SNAPSHOT
 ```
