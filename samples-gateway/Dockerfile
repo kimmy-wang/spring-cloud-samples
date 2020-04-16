@@ -1,4 +1,5 @@
-FROM 192.168.88.87/base/java:8-alpine
+FROM openjdk:8-alpine
+MAINTAINER Ying Wang upcwangying@126.com
 ARG JAR_FILE
 ENV PROFILE default
 ADD target/${JAR_FILE} /opt/app.jar
