@@ -21,7 +21,7 @@
         <cglib.version>3.1</cglib.version>
         <guava.version>20.0</guava.version>
         <jjwt.version>0.9.1</jjwt.version>
-        <maven.prefix>https://maven.pkg.github.com/upcwangying</maven.prefix>
+        <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
     </properties>
 
     <dependencies>
@@ -95,32 +95,6 @@
         </dependencies>
     </dependencyManagement>
 
-<!--    <repositories>-->
-<!--        <repository>-->
-<!--            <id>public</id>-->
-<!--            <name>public</name>-->
-<!--            <url>${maven.prefix}/maven-public/</url>-->
-<!--        </repository>-->
-<!--        <repository>-->
-<!--            <id>maven-snapshots-82</id>-->
-<!--            <name>maven-snapshots-82</name>-->
-<!--            <url>${maven.prefix}/maven-snapshots/</url>-->
-<!--        </repository>-->
-<!--    </repositories>-->
-
-<!--    <distributionManagement>-->
-<!--        <repository>-->
-<!--            <id>public</id>-->
-<!--            <name>public</name>-->
-<!--            <url>${maven.prefix}/maven-public/</url>-->
-<!--        </repository>-->
-<!--        <snapshotRepository>-->
-<!--            <id>maven-snapshots-82</id>-->
-<!--            <name>maven-snapshots-82</name>-->
-<!--            <url>${maven.prefix}/maven-snapshots/</url>-->
-<!--        </snapshotRepository>-->
-<!--    </distributionManagement>-->
-
     <build>
         <finalName>samples-core</finalName>
         <plugins>
@@ -185,5 +159,31 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>rdc-releases</id>
+            <name>rdc</name>
+            <url>${maven.prefix}/128832-release-UI6lnh</url>
+        </repository>
+        <repository>
+            <id>rdc-snapshots</id>
+            <name>rdc snapshots</name>
+            <url>${maven.prefix}/128832-snapshot-mFEr0v</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>rdc-releases</id>
+            <name>rdc</name>
+            <url>${maven.prefix}/128832-release-UI6lnh</url>
+        </repository>
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <name>rdc snapshots</name>
+            <url>${maven.prefix}/128832-snapshot-mFEr0v</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>

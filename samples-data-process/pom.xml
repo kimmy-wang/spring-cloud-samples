@@ -23,6 +23,8 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+        <docker.image.prefix>docker.pkg.github.com/upcwangying/spring-cloud-samples</docker.image.prefix>
+        <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
     </properties>
 
     <dependencyManagement>
@@ -46,5 +48,31 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>rdc-releases</id>
+            <name>rdc</name>
+            <url>${maven.prefix}/128832-release-UI6lnh</url>
+        </repository>
+        <repository>
+            <id>rdc-snapshots</id>
+            <name>rdc snapshots</name>
+            <url>${maven.prefix}/128832-snapshot-mFEr0v</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>rdc-releases</id>
+            <name>rdc</name>
+            <url>${maven.prefix}/128832-release-UI6lnh</url>
+        </repository>
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <name>rdc snapshots</name>
+            <url>${maven.prefix}/128832-snapshot-mFEr0v</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>

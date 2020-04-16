@@ -30,32 +30,6 @@
         </dependency>
     </dependencies>
 
-<!--    <repositories>-->
-<!--        <repository>-->
-<!--            <id>public</id>-->
-<!--            <name>public</name>-->
-<!--            <url>${maven.prefix}/maven-public/</url>-->
-<!--        </repository>-->
-<!--        <repository>-->
-<!--            <id>maven-snapshots-82</id>-->
-<!--            <name>maven-snapshots-82</name>-->
-<!--            <url>${maven.prefix}/maven-snapshots/</url>-->
-<!--        </repository>-->
-<!--    </repositories>-->
-
-<!--    <distributionManagement>-->
-<!--        <repository>-->
-<!--            <id>public</id>-->
-<!--            <name>public</name>-->
-<!--            <url>${maven.prefix}/maven-public/</url>-->
-<!--        </repository>-->
-<!--        <snapshotRepository>-->
-<!--            <id>maven-snapshots-82</id>-->
-<!--            <name>maven-snapshots-82</name>-->
-<!--            <url>${maven.prefix}/maven-snapshots/</url>-->
-<!--        </snapshotRepository>-->
-<!--    </distributionManagement>-->
-
     <build>
         <finalName>order-client</finalName>
         <plugins>
