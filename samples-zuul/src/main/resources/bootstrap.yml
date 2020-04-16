@@ -96,7 +96,7 @@ ribbon:
 server:
   port: ${SERVER_PORT:9090}
 
-samples:
+see:
   auth:
     enabled: true
     ignored-patterns:
