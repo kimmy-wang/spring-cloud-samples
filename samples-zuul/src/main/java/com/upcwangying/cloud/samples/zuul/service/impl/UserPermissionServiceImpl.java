@@ -27,7 +27,6 @@
 package com.upcwangying.cloud.samples.zuul.service.impl;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.upcwangying.cloud.auth.service.UserPermissionService;
 import com.upcwangying.cloud.samples.core.exception.FallbackException;
 import com.upcwangying.cloud.samples.core.utils.ResultVOUtils;
 import com.upcwangying.cloud.samples.core.vo.ResultVO;
@@ -35,6 +34,7 @@ import com.upcwangying.cloud.samples.user.client.UserClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import team.see.cloud.auth.service.UserPermissionService;
 
 /**
  * Created by WANGY
