@@ -93,6 +93,10 @@ docker-compose up -d -f filename
 
 TODO...
 
+- k8s 集群模式运行
+
+TODO...
+
 ## 测试用例
 
 测试用例在spring-cloud-samples/samples-product/product-server/src/test目录下
