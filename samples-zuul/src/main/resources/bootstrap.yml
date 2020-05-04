@@ -96,6 +96,13 @@ ribbon:
 server:
   port: ${SERVER_PORT:9090}
 
+grpc:
+  client:
+    cloud-grpc-server:
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext
+
 see:
   auth:
     enabled: true
