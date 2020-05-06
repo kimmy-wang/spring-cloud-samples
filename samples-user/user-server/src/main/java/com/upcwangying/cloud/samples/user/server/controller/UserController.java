@@ -26,6 +26,7 @@
 
 package com.upcwangying.cloud.samples.user.server.controller;
 
+import com.upcwangying.cloud.samples.core.annotation.Idempotency;
 import com.upcwangying.cloud.samples.user.server.assembler.UserOutputResourceAssembler;
 import com.upcwangying.cloud.samples.core.common.ValidList;
 import com.upcwangying.cloud.samples.core.enums.ResultEnum;
@@ -43,6 +44,7 @@ import com.upcwangying.cloud.samples.user.server.entity.UserPermission;
 import com.upcwangying.cloud.samples.user.server.service.PermissionService;
 import com.upcwangying.cloud.samples.user.server.service.RolePermissionService;
 import com.upcwangying.cloud.samples.user.server.service.UserPermissionService;
+import com.upcwangying.cloud.samples.user.server.service.impl.UserIdempotencyImpl;
 import com.upcwangying.cloud.samples.user.server.utils.BeanCreators;
 import com.upcwangying.cloud.samples.user.server.entity.User;
 import com.upcwangying.cloud.samples.user.server.service.UserService;
@@ -127,6 +129,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/{id:\\w{8}(?:-\\w{4}){3}-\\w{12}}/roles")
+    @Idempotency
     public ResultVO getUserRoleByUserId(@PathVariable("id") String id) {
         List<UserPermission> userPermissionList = userPermissionService.findAllByUserId(id);
         if (CollectionUtils.isEmpty(userPermissionList)) {
@@ -237,6 +240,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/token")
+    @Idempotency(fallback = UserIdempotencyImpl.class)
     public ResultVO getUserTokenByUsername(@RequestParam("username") String username, @RequestParam("password") String password) {
         if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
             log.error("UserController: getUserTokenByUsername(username={}, password={})", username, password);
