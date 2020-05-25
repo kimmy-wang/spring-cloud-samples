@@ -26,7 +26,7 @@
 
 package com.upcwangying.cloud.samples.core.service;
 
-public interface IdempotencyService {
-    public boolean invoke();
+public interface IdempotentService {
+    boolean invoke();
 }
 

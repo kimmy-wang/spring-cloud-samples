@@ -24,17 +24,13 @@
  *
  */
 
-package com.upcwangying.cloud.samples.core.annotation;
+package com.upcwangying.cloud.samples.core.service.impl;
 
-import com.upcwangying.cloud.samples.core.service.IdempotencyService;
-import com.upcwangying.cloud.samples.core.service.impl.DefaultIdempotencyServiceImpl;
+import com.upcwangying.cloud.samples.core.service.IdempotentService;
 
-/**
- * 幂等性接口
- *
- * @author WANGY
- * @date 2019/3/25 16:47
- */
-public @interface Idempotency {
-    Class<? extends IdempotencyService> fallback() default DefaultIdempotencyServiceImpl.class;
+public class DefaultIdempotentServiceImpl implements IdempotentService {
+    @Override
+    public boolean invoke() {
+        return false;
+    }
 }

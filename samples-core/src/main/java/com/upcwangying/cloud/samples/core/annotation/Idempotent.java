@@ -24,16 +24,17 @@
  *
  */
 
-package com.upcwangying.cloud.samples.user.server.service.impl;
+package com.upcwangying.cloud.samples.core.annotation;
 
-import com.upcwangying.cloud.samples.core.service.IdempotencyService;
-import org.springframework.stereotype.Service;
+import com.upcwangying.cloud.samples.core.service.IdempotentService;
+import com.upcwangying.cloud.samples.core.service.impl.DefaultIdempotentServiceImpl;
 
-@Service
-public class UserIdempotencyImpl implements IdempotencyService {
-
-    @Override
-    public boolean invoke() {
-        return true;
-    }
+/**
+ * 幂等性接口
+ *
+ * @author WANGY
+ * @date 2019/3/25 16:47
+ */
+public @interface Idempotent {
+    Class<? extends IdempotentService> fallback() default DefaultIdempotentServiceImpl.class;
 }

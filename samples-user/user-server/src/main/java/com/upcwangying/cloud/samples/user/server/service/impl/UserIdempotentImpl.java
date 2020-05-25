@@ -24,13 +24,16 @@
  *
  */
 
-package com.upcwangying.cloud.samples.core.service.impl;
+package com.upcwangying.cloud.samples.user.server.service.impl;
 
-import com.upcwangying.cloud.samples.core.service.IdempotencyService;
+import com.upcwangying.cloud.samples.core.service.IdempotentService;
+import org.springframework.stereotype.Service;
 
-public class DefaultIdempotencyServiceImpl implements IdempotencyService {
+@Service
+public class UserIdempotentImpl implements IdempotentService {
+
     @Override
     public boolean invoke() {
-        return false;
+        return true;
     }
 }

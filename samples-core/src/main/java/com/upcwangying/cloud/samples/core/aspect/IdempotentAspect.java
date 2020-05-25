@@ -26,8 +26,8 @@
 
 package com.upcwangying.cloud.samples.core.aspect;
 
-import com.upcwangying.cloud.samples.core.annotation.Idempotency;
-import com.upcwangying.cloud.samples.core.service.IdempotencyService;
+import com.upcwangying.cloud.samples.core.annotation.Idempotent;
+import com.upcwangying.cloud.samples.core.service.IdempotentService;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -45,8 +45,8 @@ import java.lang.reflect.Method;
 @Aspect
 @Component
 @Slf4j
-public class IdempotencyAspect {
-    @Pointcut("@annotation(com.upcwangying.cloud.samples.core.annotation.Idempotency)")
+public class IdempotentAspect {
+    @Pointcut("@annotation(com.upcwangying.cloud.samples.core.annotation.Idempotent)")
     public void pointCut() {
 
     }
@@ -61,7 +61,7 @@ public class IdempotencyAspect {
             return;
         }
 
-        if (!method.isAnnotationPresent(Idempotency.class)) {
+        if (!method.isAnnotationPresent(Idempotent.class)) {
             return;
         }
 
@@ -81,11 +81,11 @@ public class IdempotencyAspect {
             }
         }
 
-        Idempotency[] idempotencies = method.getAnnotationsByType(Idempotency.class);
-        Idempotency idempotency = idempotencies[idempotencies.length - 1];
-        Class<? extends IdempotencyService> fallback = idempotency.fallback();
+        Idempotent[] idempotencies = method.getAnnotationsByType(Idempotent.class);
+        Idempotent idempotent = idempotencies[idempotencies.length - 1];
+        Class<? extends IdempotentService> fallback = idempotent.fallback();
         try {
-            IdempotencyService service = fallback.newInstance();
+            IdempotentService service = fallback.newInstance();
             // true: 代表已是幂等性接口; 否则为false
             boolean idempotencyFlag = service.invoke();
             if (idempotencyFlag) {
