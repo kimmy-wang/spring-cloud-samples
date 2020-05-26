@@ -28,24 +28,28 @@ package com.upcwangying.cloud.samples.core.aspect;
 
 import com.upcwangying.cloud.samples.core.annotation.Idempotent;
 import com.upcwangying.cloud.samples.core.service.IdempotentService;
-import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.List;
 
 @Aspect
 @Component
-@Slf4j
+@SuppressWarnings("ReflectionForUnavailableAnnotation")
 public class IdempotentAspect {
+    private Logger log = LoggerFactory.getLogger(IdempotentAspect.class);
+    private static final String TAG = IdempotentAspect.class.getName();
+
     @Pointcut("@annotation(com.upcwangying.cloud.samples.core.annotation.Idempotent)")
     public void pointCut() {
 
@@ -57,47 +61,61 @@ public class IdempotentAspect {
         MethodSignature signature = (MethodSignature) point.getSignature();
         Method method = signature.getMethod();
 
+        // 非public方法
         if (!method.isAccessible()) {
             return;
         }
 
-        if (!method.isAnnotationPresent(Idempotent.class)) {
-            return;
-        }
-
         Annotation[] annotations = method.getAnnotations();
-        for (Annotation annotation:
-             annotations) {
-            // 忽略 @GetMapping()
-            if (annotation.getClass().equals(GetMapping.class)) {
+        for (Annotation annotation :
+                annotations) {
+            // 忽略 @GetMapping() || @RequestMapping(method=RequestMethod.GET)
+            if (annotation.getClass().equals(GetMapping.class)
+                    || (annotation.getClass().equals(RequestMapping.class)
+                    && RequestMethod.GET.equals(((RequestMapping) annotation).method()))) {
+                log.warn(TAG, "GET");
                 return;
-            }
-            // 忽略 @RequestMapping(method=RequestMethod.GET)
-            if (annotation.getClass().equals(RequestMapping.class)) {
-                RequestMapping requestMapping = (RequestMapping) annotation;
-                if (RequestMethod.GET.equals(requestMapping.method())) {
-                    return;
+            } else if (idempotent(annotation)) {
+                // PUT, PATCH, POST, DELETE
+                if (!method.isAnnotationPresent(Idempotent.class)) {
+                    log.error(TAG, "方法未使用幂等性注解", method.getName());
                 }
+            } else {
+                // todo HEAD, OPTIONS, TRACE
+                log.warn(TAG, "HEAD, OPTIONS, TRACE");
             }
         }
 
-        Idempotent[] idempotencies = method.getAnnotationsByType(Idempotent.class);
-        Idempotent idempotent = idempotencies[idempotencies.length - 1];
+        Idempotent[] idempotence = method.getAnnotationsByType(Idempotent.class);
+        Idempotent idempotent = idempotence[idempotence.length - 1];
         Class<? extends IdempotentService> fallback = idempotent.fallback();
         try {
             IdempotentService service = fallback.newInstance();
             // true: 代表已是幂等性接口; 否则为false
-            boolean idempotencyFlag = service.invoke();
-            if (idempotencyFlag) {
+            boolean idempotentFlag = service.invoke();
+            if (idempotentFlag) {
                 log.info("幂等性接口");
             } else {
                 log.error("非幂等性接口");
             }
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    private boolean idempotent(Annotation annotation) {
+        List<RequestMethod> idempotenceMethods = Arrays.asList(RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH, RequestMethod.DELETE);
+        if (RequestMapping.class.equals(annotation.getClass())) {
+            RequestMethod[] methods = ((RequestMapping) annotation).method();
+            for (RequestMethod method: methods) {
+                if (idempotenceMethods.contains(method)) return true;
+            }
+            return false;
+        }
+
+        List<Class> idempotenceMaps = Arrays.asList(PostMapping.class, PutMapping.class, PatchMapping.class, DeleteMapping.class);
+        return idempotenceMaps.contains(annotation.getClass());
     }
 
 }

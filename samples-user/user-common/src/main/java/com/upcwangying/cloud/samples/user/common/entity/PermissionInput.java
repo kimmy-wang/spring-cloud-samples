@@ -26,8 +26,6 @@
 
 package com.upcwangying.cloud.samples.user.common.entity;
 
-import lombok.Data;
-import lombok.ToString;
 
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
@@ -38,8 +36,6 @@ import java.io.Serializable;
  * @author WANGY
  * @date 2019/4/28 16:10
  */
-@Data
-@ToString
 public class PermissionInput implements Serializable {
     private static final long serialVersionUID = 218316083242080362L;
 
@@ -70,4 +66,54 @@ public class PermissionInput implements Serializable {
      */
     private String permissionDesc;
 
+    public String getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getPermissionName() {
+        return permissionName;
+    }
+
+    public void setPermissionName(String permissionName) {
+        this.permissionName = permissionName;
+    }
+
+    public String getPermissionPath() {
+        return permissionPath;
+    }
+
+    public void setPermissionPath(String permissionPath) {
+        this.permissionPath = permissionPath;
+    }
+
+    public String getRequestMethod() {
+        return requestMethod;
+    }
+
+    public void setRequestMethod(String requestMethod) {
+        this.requestMethod = requestMethod;
+    }
+
+    public String getPermissionDesc() {
+        return permissionDesc;
+    }
+
+    public void setPermissionDesc(String permissionDesc) {
+        this.permissionDesc = permissionDesc;
+    }
+
+    @Override
+    public String toString() {
+        return "PermissionInput{" +
+                "parentId='" + parentId + '\'' +
+                ", permissionName='" + permissionName + '\'' +
+                ", permissionPath='" + permissionPath + '\'' +
+                ", requestMethod='" + requestMethod + '\'' +
+                ", permissionDesc='" + permissionDesc + '\'' +
+                '}';
+    }
 }

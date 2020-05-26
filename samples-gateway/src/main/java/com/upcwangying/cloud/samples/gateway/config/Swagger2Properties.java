@@ -39,11 +39,18 @@ import java.util.List;
  * @author WANGY
  * @date 2019/3/29 14:26
  */
-@Data
 @Configuration
 @PropertySource("classpath:bootstrap.yml")
 @ConfigurationProperties(prefix = "samples")
 public class Swagger2Properties {
 
     private List<String> excludeServices;
+
+    public List<String> getExcludeServices() {
+        return excludeServices;
+    }
+
+    public void setExcludeServices(List<String> excludeServices) {
+        this.excludeServices = excludeServices;
+    }
 }

@@ -7,7 +7,7 @@ spring:
     password: Pa55Word
     url: jdbc:mysql://192.168.88.83:3306/samples_order?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
   zipkin:
-    base-url: http://${ZIPKIN_HOST:192.168.88.87}:${ZIPKIN_PORT:9411}
+    base-url: http://${ZIPKIN_HOST:127.0.0.1}:${ZIPKIN_PORT:9411}
     discovery-client-enabled: false
   sleuth:
     sampler:
@@ -15,20 +15,22 @@ spring:
   boot:
     admin:
       client:
-        url: http://${ADMIN_HOST:192.168.88.87}:${ADMIN_PORT:9093}
+        url: http://${ADMIN_HOST:127.0.0.1}:${ADMIN_PORT:9093}
         username: ${ADMIN_USERNAME:admin}
         password: ${ADMIN_PASSWORD:admin}
   cloud:
     nacos:
       config:
-        namespace: 7433eb3a-afec-42ea-80e3-f33c7d07d57d
         file-extension: yaml
-        server-addr: ${NACOS_HOST:192.168.88.87}:${NACOS_PORT:8848}
-#      discovery:
-#        namespace: 7433eb3a-afec-42ea-80e3-f33c7d07d57d
-#        server-addr: ${NACOS_HOST:192.168.88.87}:${NACOS_PORT:8848}
-#        metadata:
-#          - env: prod
+        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
+        username: nacos
+        password: nacos
+      discovery:
+        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
+        username: nacos
+        password: nacos
+        metadata:
+          - env: prod
   profiles:
     active: dev
   # 在 Spring Boot 中, 当用户访问了一个不存在的链接时, Spring 默认会将页面重定向到 **/error** 上, 而不会抛出异常.
@@ -38,18 +40,18 @@ spring:
   resources:
     add-mappings: false
 
-eureka:
-  client:
-    security:
-      basic:
-        user: admin
-        password: admin
-    service-url:
-      defaultZone: http://${eureka.client.security.basic.user}:${eureka.client.security.basic.password}@${EUREKA_SERVER_HOST:127.0.0.1}:${EUREKA_SERVER_PORT:8762}/eureka/
-  instance:
-    metadata-map:
-      host-mark: running-host
-#      host-mark: gray-host
+#eureka:
+#  client:
+#    security:
+#      basic:
+#        user: admin
+#        password: admin
+#    service-url:
+#      defaultZone: http://${eureka.client.security.basic.user}:${eureka.client.security.basic.password}@${EUREKA_SERVER_HOST:127.0.0.1}:${EUREKA_SERVER_PORT:8762}/eureka/
+#  instance:
+#    metadata-map:
+#      host-mark: running-host
+##      host-mark: gray-host
 
 server:
   port: ${SERVER_PORT:9091}

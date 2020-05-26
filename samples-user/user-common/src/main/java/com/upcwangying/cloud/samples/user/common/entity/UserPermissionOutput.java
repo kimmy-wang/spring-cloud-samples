@@ -26,9 +26,6 @@
 
 package com.upcwangying.cloud.samples.user.common.entity;
 
-import lombok.Data;
-import lombok.ToString;
-
 import java.io.Serializable;
 
 /**
@@ -37,8 +34,6 @@ import java.io.Serializable;
  * @author WANGY
  * @date 2019/4/28 16:26
  */
-@Data
-@ToString
 public class UserPermissionOutput implements Serializable {
     private static final long serialVersionUID = 2612229197950796288L;
 
@@ -67,4 +62,54 @@ public class UserPermissionOutput implements Serializable {
      */
     private String type;
 
+    public String getUserPermissionId() {
+        return UserPermissionId;
+    }
+
+    public void setUserPermissionId(String userPermissionId) {
+        UserPermissionId = userPermissionId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getPermissionId() {
+        return permissionId;
+    }
+
+    public void setPermissionId(String permissionId) {
+        this.permissionId = permissionId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "UserPermissionOutput{" +
+                "UserPermissionId='" + UserPermissionId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", roleId='" + roleId + '\'' +
+                ", permissionId='" + permissionId + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

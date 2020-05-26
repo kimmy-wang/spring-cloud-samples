@@ -26,9 +26,6 @@
 
 package com.upcwangying.cloud.samples.user.common.entity;
 
-import lombok.Data;
-import lombok.ToString;
-
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
@@ -38,8 +35,6 @@ import java.io.Serializable;
  * @author WANGY
  * @date 2019/4/28 16:10
  */
-@Data
-@ToString
 public class RoleInput implements Serializable {
     private static final long serialVersionUID = 3594192868028987705L;
 
@@ -54,4 +49,27 @@ public class RoleInput implements Serializable {
      */
     private String roleDesc;
 
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getRoleDesc() {
+        return roleDesc;
+    }
+
+    public void setRoleDesc(String roleDesc) {
+        this.roleDesc = roleDesc;
+    }
+
+    @Override
+    public String toString() {
+        return "RoleInput{" +
+                "roleName='" + roleName + '\'' +
+                ", roleDesc='" + roleDesc + '\'' +
+                '}';
+    }
 }

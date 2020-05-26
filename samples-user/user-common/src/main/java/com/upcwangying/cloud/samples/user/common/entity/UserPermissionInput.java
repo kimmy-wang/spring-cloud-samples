@@ -27,8 +27,6 @@
 package com.upcwangying.cloud.samples.user.common.entity;
 
 import com.upcwangying.cloud.samples.user.common.validation.annotation.UserPermissionInputAnno;
-import lombok.Data;
-import lombok.ToString;
 
 import java.io.Serializable;
 
@@ -38,8 +36,6 @@ import java.io.Serializable;
  * @author WANGY
  * @date 2019/4/28 16:26
  */
-@Data
-@ToString
 @UserPermissionInputAnno
 public class UserPermissionInput implements Serializable {
     private static final long serialVersionUID = -6632145499985950477L;
@@ -59,4 +55,36 @@ public class UserPermissionInput implements Serializable {
      */
     private String type;
 
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getPermissionId() {
+        return permissionId;
+    }
+
+    public void setPermissionId(String permissionId) {
+        this.permissionId = permissionId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "UserPermissionInput{" +
+                "roleId='" + roleId + '\'' +
+                ", permissionId='" + permissionId + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

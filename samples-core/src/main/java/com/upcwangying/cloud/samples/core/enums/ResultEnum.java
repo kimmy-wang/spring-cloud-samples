@@ -26,8 +26,6 @@
 
 package com.upcwangying.cloud.samples.core.enums;
 
-import lombok.Getter;
-
 /**
  * Created with IntelliJ IDEA.
  * @author WANGY
@@ -35,7 +33,6 @@ import lombok.Getter;
  * To change this template use File | Settings | File Templates.
  * Description:
  */
-@Getter
 public enum ResultEnum {
 
     PARAM_ERROR(10, "参数错误"),
@@ -62,5 +59,13 @@ public enum ResultEnum {
     ResultEnum(Integer code, String desc) {
         this.code = code;
         this.desc = desc;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public String getDesc() {
+        return desc;
     }
 }

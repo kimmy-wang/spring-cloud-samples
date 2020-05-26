@@ -26,8 +26,6 @@
 
 package com.upcwangying.cloud.samples.core.common;
 
-import lombok.Data;
-
 import javax.validation.Valid;
 import java.util.*;
 
@@ -37,7 +35,6 @@ import java.util.*;
  * @author WANGY
  * @date 2019/5/9 10:25
  */
-@Data
 public class ValidList<E> implements List<E> {
 
     @Valid
@@ -156,5 +153,13 @@ public class ValidList<E> implements List<E> {
     @Override
     public List<E> subList(int fromIndex, int toIndex) {
         return list.subList(fromIndex, toIndex);
+    }
+
+    public List<E> getList() {
+        return list;
+    }
+
+    public void setList(List<E> list) {
+        this.list = list;
     }
 }

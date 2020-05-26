@@ -25,7 +25,6 @@
 
 package com.upcwangying.cloud.samples.gateway.filters;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.core.Ordered;
@@ -36,7 +35,6 @@ import reactor.core.publisher.Mono;
  * @author WANGY
  * @date 2020/4/16 18:13
  */
-@Slf4j
 public class VersionFilter implements GatewayFilter, Ordered {
 
     @Override

@@ -26,15 +26,12 @@
 
 package com.upcwangying.cloud.samples.core.exception;
 
-import lombok.Data;
-
 /**
  * 异常基类
  *
  * @author WANGY
  * @date 2019/3/29 9:21
  */
-@Data
 public class SamplesException extends RuntimeException {
     private static final long serialVersionUID = 3581367359864724861L;
 
@@ -57,4 +54,11 @@ public class SamplesException extends RuntimeException {
         this.code = code;
     }
 
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
 }

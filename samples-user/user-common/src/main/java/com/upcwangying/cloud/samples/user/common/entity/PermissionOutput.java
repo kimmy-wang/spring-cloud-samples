@@ -26,9 +26,6 @@
 
 package com.upcwangying.cloud.samples.user.common.entity;
 
-import lombok.Data;
-import lombok.ToString;
-
 import java.io.Serializable;
 
 /**
@@ -37,8 +34,6 @@ import java.io.Serializable;
  * @author WANGY
  * @date 2019/4/28 16:10
  */
-@Data
-@ToString
 public class PermissionOutput implements Serializable {
     private static final long serialVersionUID = 5344579694978611470L;
 
@@ -72,4 +67,51 @@ public class PermissionOutput implements Serializable {
      */
     private String permissionDesc;
 
+    public String getPermissionId() {
+        return permissionId;
+    }
+
+    public void setPermissionId(String permissionId) {
+        this.permissionId = permissionId;
+    }
+
+    public String getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getPermissionName() {
+        return permissionName;
+    }
+
+    public void setPermissionName(String permissionName) {
+        this.permissionName = permissionName;
+    }
+
+    public String getPermissionPath() {
+        return permissionPath;
+    }
+
+    public void setPermissionPath(String permissionPath) {
+        this.permissionPath = permissionPath;
+    }
+
+    public String getRequestMethod() {
+        return requestMethod;
+    }
+
+    public void setRequestMethod(String requestMethod) {
+        this.requestMethod = requestMethod;
+    }
+
+    public String getPermissionDesc() {
+        return permissionDesc;
+    }
+
+    public void setPermissionDesc(String permissionDesc) {
+        this.permissionDesc = permissionDesc;
+    }
 }

@@ -26,9 +26,6 @@
 
 package com.upcwangying.cloud.samples.user.common.entity;
 
-import lombok.Data;
-import lombok.ToString;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -38,8 +35,6 @@ import javax.validation.constraints.Size;
  * @author WANGY
  * @date 2019/4/18 16:19
  */
-@Data
-@ToString
 public class UserInput {
 
     /**
@@ -61,4 +56,27 @@ public class UserInput {
      */
     private String userDesc;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUserDesc() {
+        return userDesc;
+    }
+
+    public void setUserDesc(String userDesc) {
+        this.userDesc = userDesc;
+    }
 }
