@@ -22,7 +22,7 @@
         <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
         <user-client.version>0.1.0-SNAPSHOT</user-client.version>
         <ribbon-discovery-filter.version>2.1.0</ribbon-discovery-filter.version>
-        <spring-cloud-see.version>1.0.3-SNAPSHOT</spring-cloud-see.version>
+        <spring-cloud-see.version>1.0.3</spring-cloud-see.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
         <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
@@ -132,12 +132,12 @@
         </dependency>
 
         <dependency>
-            <groupId>team.see.cloud</groupId>
+            <groupId>com.upcwangying.cloud.see</groupId>
             <artifactId>spring-cloud-starter-see-auth</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>team.see.cloud</groupId>
+            <groupId>com.upcwangying.cloud.see</groupId>
             <artifactId>spring-cloud-starter-see-swagger</artifactId>
         </dependency>
 
@@ -212,7 +212,7 @@
             </dependency>
 
             <dependency>
-                <groupId>team.see.cloud</groupId>
+                <groupId>com.upcwangying.cloud.see</groupId>
                 <artifactId>spring-cloud-see-dependencies</artifactId>
                 <version>${spring-cloud-see.version}</version>
                 <type>pom</type>

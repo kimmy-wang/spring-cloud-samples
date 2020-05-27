@@ -34,7 +34,7 @@ import com.upcwangying.cloud.samples.user.client.UserClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import team.see.cloud.auth.service.UserPermissionService;
+import com.upcwangying.cloud.see.auth.service.UserPermissionService;
 
 /**
  * Created by WANGY
