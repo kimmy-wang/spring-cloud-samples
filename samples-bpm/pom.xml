@@ -3,12 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.9.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <artifactId>samples-parent</artifactId>
+        <groupId>com.upcwangying.cloud.samples</groupId>
+        <version>0.1.1-SNAPSHOT</version>
+        <relativePath>..</relativePath>
     </parent>
-    <groupId>com.upcwangying.cloud.samples</groupId>
     <artifactId>samples-bpm</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <name>samples-bpm</name>
@@ -17,7 +16,6 @@
     <properties>
         <java.version>1.8</java.version>
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
-        <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
         <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
     </properties>
 
@@ -92,31 +90,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>rdc-releases</id>
-            <name>rdc</name>
-            <url>${maven.prefix}/128832-release-UI6lnh</url>
-        </repository>
-        <repository>
-            <id>rdc-snapshots</id>
-            <name>rdc snapshots</name>
-            <url>${maven.prefix}/128832-snapshot-mFEr0v</url>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>rdc-releases</id>
-            <name>rdc</name>
-            <url>${maven.prefix}/128832-release-UI6lnh</url>
-        </repository>
-        <snapshotRepository>
-            <id>rdc-snapshots</id>
-            <name>rdc snapshots</name>
-            <url>${maven.prefix}/128832-snapshot-mFEr0v</url>
-        </snapshotRepository>
-    </distributionManagement>
 
 </project>

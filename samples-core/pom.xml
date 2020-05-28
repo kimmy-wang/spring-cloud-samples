@@ -3,12 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.9.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <artifactId>samples-parent</artifactId>
+        <groupId>com.upcwangying.cloud.samples</groupId>
+        <version>0.1.1-SNAPSHOT</version>
+        <relativePath>..</relativePath>
     </parent>
-    <groupId>com.upcwangying.cloud.samples</groupId>
     <artifactId>samples-core</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <name>samples-core</name>
@@ -16,12 +15,10 @@
     <packaging>jar</packaging>
 
     <properties>
-        <java.version>1.8</java.version>
-        <commons-lang.version>2.6</commons-lang.version>
-        <cglib.version>3.1</cglib.version>
         <guava.version>20.0</guava.version>
+        <cglib.version>3.1</cglib.version>
         <jjwt.version>0.9.1</jjwt.version>
-        <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
+        <commons-lang.version>2.6</commons-lang.version>
     </properties>
 
     <dependencies>
@@ -164,31 +161,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>rdc-releases</id>
-            <name>rdc</name>
-            <url>${maven.prefix}/128832-release-UI6lnh</url>
-        </repository>
-        <repository>
-            <id>rdc-snapshots</id>
-            <name>rdc snapshots</name>
-            <url>${maven.prefix}/128832-snapshot-mFEr0v</url>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>rdc-releases</id>
-            <name>rdc</name>
-            <url>${maven.prefix}/128832-release-UI6lnh</url>
-        </repository>
-        <snapshotRepository>
-            <id>rdc-snapshots</id>
-            <name>rdc snapshots</name>
-            <url>${maven.prefix}/128832-snapshot-mFEr0v</url>
-        </snapshotRepository>
-    </distributionManagement>
 
 </project>

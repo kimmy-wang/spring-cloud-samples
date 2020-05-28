@@ -3,31 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.9.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <artifactId>samples-parent</artifactId>
+        <groupId>com.upcwangying.cloud.samples</groupId>
+        <version>0.1.1-SNAPSHOT</version>
+        <relativePath>..</relativePath>
     </parent>
-    <groupId>com.upcwangying.cloud.samples</groupId>
     <artifactId>samples-zuul</artifactId>
     <version>0.1.1-SNAPSHOT</version>
     <name>samples-zuul</name>
     <description>网关服务(Netflix Zuul)</description>
-
-    <properties>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.SR4</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.0.2.RELEASE</spring-cloud-alibaba.version>
-        <spring-cloud-zuul-ratelimit-version>2.2.3.RELEASE</spring-cloud-zuul-ratelimit-version>
-        <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
-        <user-client.version>0.1.0-SNAPSHOT</user-client.version>
-        <ribbon-discovery-filter.version>2.1.0</ribbon-discovery-filter.version>
-        <spring-cloud-see.version>1.0.3</spring-cloud-see.version>
-        <commons-collections.version>3.2.2</commons-collections.version>
-        <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
-        <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
-        <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -134,11 +118,13 @@
         <dependency>
             <groupId>com.upcwangying.cloud.see</groupId>
             <artifactId>spring-cloud-starter-see-auth</artifactId>
+            <version>1.0.3</version>
         </dependency>
 
         <dependency>
             <groupId>com.upcwangying.cloud.see</groupId>
             <artifactId>spring-cloud-starter-see-swagger</artifactId>
+            <version>1.0.3</version>
         </dependency>
 
         <dependency>
@@ -162,70 +148,6 @@
             <artifactId>samples-core</artifactId>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.upcwangying.cloud.samples.user</groupId>
-                <artifactId>user-client</artifactId>
-                <version>${user-client.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud-alibaba.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>com.upcwangying.cloud.samples</groupId>
-                <artifactId>samples-core</artifactId>
-                <version>${samples-core.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.marcosbarbero.cloud</groupId>
-                <artifactId>spring-cloud-zuul-ratelimit</artifactId>
-                <version>${spring-cloud-zuul-ratelimit-version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.jmnarloch</groupId>
-                <artifactId>ribbon-discovery-filter-spring-cloud-starter</artifactId>
-                <version>${ribbon-discovery-filter.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>net.devh</groupId>
-                <artifactId>grpc-client-spring-boot-starter</artifactId>
-                <version>2.4.0.RELEASE</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.upcwangying.cloud.see</groupId>
-                <artifactId>spring-cloud-see-dependencies</artifactId>
-                <version>${spring-cloud-see.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>commons-collections</groupId>
-                <artifactId>commons-collections</artifactId>
-                <version>${commons-collections.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <finalName>samples-zuul</finalName>
@@ -326,31 +248,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>rdc-releases</id>
-            <name>rdc</name>
-            <url>${maven.prefix}/128832-release-UI6lnh</url>
-        </repository>
-        <repository>
-            <id>rdc-snapshots</id>
-            <name>rdc snapshots</name>
-            <url>${maven.prefix}/128832-snapshot-mFEr0v</url>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>rdc-releases</id>
-            <name>rdc</name>
-            <url>${maven.prefix}/128832-release-UI6lnh</url>
-        </repository>
-        <snapshotRepository>
-            <id>rdc-snapshots</id>
-            <name>rdc snapshots</name>
-            <url>${maven.prefix}/128832-snapshot-mFEr0v</url>
-        </snapshotRepository>
-    </distributionManagement>
 
 </project>

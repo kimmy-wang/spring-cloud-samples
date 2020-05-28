@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.9.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.upcwangying.cloud.samples</groupId>
+    <artifactId>samples-parent</artifactId>
+    <version>0.1.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>samples-parent</name>
+    <description> Spring Cloud Samples</description>
+    <url>https://cloud.upcwangying.com</url>
+
+    <modules>
+        <module>samples-core</module>
+        <module>samples-user</module>
+        <module>samples-product</module>
+        <module>samples-order</module>
+        <module>samples-bpm</module>
+        <module>samples-admin</module>
+        <module>samples-data-process</module>
+        <module>samples-eureka</module>
+        <module>samples-gateway</module>
+        <module>samples-hystrix-dashboard</module>
+        <module>samples-zuul</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.SR4</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.0.2.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-zuul-ratelimit-version>2.2.3.RELEASE</spring-cloud-zuul-ratelimit-version>
+        <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
+        <user-client.version>0.1.0-SNAPSHOT</user-client.version>
+        <ribbon-discovery-filter.version>2.1.0</ribbon-discovery-filter.version>
+        <spring-cloud-see.version>1.0.3</spring-cloud-see.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
+        <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
+        <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.upcwangying.cloud.samples.user</groupId>
+                <artifactId>user-client</artifactId>
+                <version>${user-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.upcwangying.cloud.samples</groupId>
+                <artifactId>samples-core</artifactId>
+                <version>${samples-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marcosbarbero.cloud</groupId>
+                <artifactId>spring-cloud-zuul-ratelimit</artifactId>
+                <version>${spring-cloud-zuul-ratelimit-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jmnarloch</groupId>
+                <artifactId>ribbon-discovery-filter-spring-cloud-starter</artifactId>
+                <version>${ribbon-discovery-filter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.devh</groupId>
+                <artifactId>grpc-client-spring-boot-starter</artifactId>
+                <version>2.4.0.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.upcwangying.cloud.see</groupId>
+                <artifactId>spring-cloud-see-dependencies</artifactId>
+                <version>1.0.3</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.3</version>
+                        <configuration>
+                            <encoding>${project.build.sourceEncoding}</encoding>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
+                            <showWarnings>true</showWarnings>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.4</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>2.8.2</version>
+                    </plugin>
+
+                    <!--2、把附属的jar打到jar内部的lib目录中 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>2.10</version>
+                        <executions>
+                            <execution>
+                                <id>copy-dependencies</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.5</version>
+                        <configuration>
+                            <skipTests>true</skipTests>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <developers>
+        <developer>
+            <name>Ying Wang</name>
+            <email>upcwangying@gmail.com</email>
+            <url>https://github.com/upcwangying</url>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://raw.githubusercontent.com/upcwangying/spring-cloud-samples/master/LICENSE.md</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/upcwangying/spring-cloud-samples</url>
+        <connection>https://github.com/upcwangying/spring-cloud-samples.git</connection>
+    </scm>
+
+    <repositories>
+        <repository> 
+            <id>central-repos1</id>
+            <name>Central Repository 2</name>
+            <url>http://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>oss</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>oss</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+</project>
