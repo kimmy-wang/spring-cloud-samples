@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>samples-parent</artifactId>
+        <groupId>com.upcwangying.cloud.samples</groupId>
+        <version>0.1.1-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+    <artifactId>samples-mdm</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <name>samples-mdm</name>
+    <description>主数据模块</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>mdm-common</module>
+        <module>mdm-client</module>
+        <module>mdm-server</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.SR4</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.0.2.RELEASE</spring-cloud-alibaba.version>
+        <spring-boot-admin.version>2.0.5</spring-boot-admin.version>
+        <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
+        <user-client.version>0.1.0-SNAPSHOT</user-client.version>
+        <swagger-spring.version>1.9.0.RELEASE</swagger-spring.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <grpc.version>1.29.0</grpc.version><!-- CURRENT_GRPC_VERSION -->
+        <grpc-spring-boot-starter.version>3.2.2</grpc-spring-boot-starter.version>
+
+        <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
+        <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.upcwangying.cloud.samples</groupId>
+                <artifactId>samples-core</artifactId>
+                <version>${samples-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.upcwangying.cloud.samples.user</groupId>
+                <artifactId>user-common</artifactId>
+                <version>${user-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.spring4all</groupId>
+                <artifactId>swagger-spring-boot-starter</artifactId>
+                <version>${swagger-spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.devh</groupId>
+                <artifactId>grpc-server-spring-boot-starter</artifactId>
+                <version>2.4.0.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-bom</artifactId>
+                <version>${grpc.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

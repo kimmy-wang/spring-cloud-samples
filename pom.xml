@@ -18,6 +18,7 @@
 
     <modules>
         <module>samples-core</module>
+        <module>samples-mdm</module>
         <module>samples-user</module>
         <module>samples-product</module>
         <module>samples-order</module>
