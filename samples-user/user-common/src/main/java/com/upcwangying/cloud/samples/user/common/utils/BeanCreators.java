@@ -36,7 +36,6 @@ import com.upcwangying.cloud.samples.user.common.entity.UserPermissionOutput;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/25 14:26
  */
 public class BeanCreators {
 

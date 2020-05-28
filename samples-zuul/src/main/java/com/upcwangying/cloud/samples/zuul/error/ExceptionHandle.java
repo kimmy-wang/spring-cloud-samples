@@ -38,7 +38,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * 如果是请求zuul本身项目的一些异常需要使用@ControllerAdvice来实现，这个和普通的springMVC项目就一样了
  *
  * @author WANGY
- * @date 2019/4/4 9:19
  */
 @ControllerAdvice
 @Slf4j

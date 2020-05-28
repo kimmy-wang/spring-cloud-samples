@@ -41,7 +41,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 熔断测试类
  *
  * @author WANGY
- * @date 2019/3/29 8:52
  */
 @RestController
 @DefaultProperties(defaultFallback = "defaultFallback")

@@ -33,7 +33,6 @@ import java.io.Serializable;
  * 角色表
  *
  * @author WANGY
- * @date 2019/4/28 16:10
  */
 public class RoleInput implements Serializable {
     private static final long serialVersionUID = 3594192868028987705L;

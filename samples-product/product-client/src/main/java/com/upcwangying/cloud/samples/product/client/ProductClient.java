@@ -51,7 +51,6 @@ import java.util.concurrent.TimeUnit;
  * 此接口供其他服务调用
  *
  * @author WANGY
- * @date 2019/3/25 16:47
  */
 @FeignClient(name = "product",
         fallback = ProductClient.ProductClientFallback.class,

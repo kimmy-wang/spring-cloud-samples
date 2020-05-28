@@ -37,7 +37,6 @@ import java.util.UUID;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/25 16:09
  */
 public final class JwtUtil {
 

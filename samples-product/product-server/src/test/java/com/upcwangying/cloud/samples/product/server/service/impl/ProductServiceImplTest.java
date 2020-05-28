@@ -47,7 +47,6 @@ import static org.mockito.BDDMockito.given;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/22 13:41
  */
 @SpringBootTest
 @Slf4j

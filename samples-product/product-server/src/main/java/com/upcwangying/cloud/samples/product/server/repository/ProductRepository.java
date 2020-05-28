@@ -36,7 +36,6 @@ import java.util.List;
  * 商品服务持久层
  *
  * @author WANGY
- * @date 2019/3/25 14:56
  */
 @Repository
 public interface ProductRepository extends JpaRepository<Product, String> {

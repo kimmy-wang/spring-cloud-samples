@@ -39,7 +39,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 自定义服务降级机制
  *
  * @author WANGY
- * @date 2019/3/28 16:03
  */
 @RestController
 @DefaultProperties(defaultFallback = "defaultFallback")

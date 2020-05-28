@@ -36,7 +36,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 集成alibaba nacos config实现动态配置
  *
  * @author WANGY
- * @date 2019/3/29 10:58
  */
 @RestController
 @RequestMapping("config")

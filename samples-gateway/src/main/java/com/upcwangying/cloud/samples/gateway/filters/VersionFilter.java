@@ -33,7 +33,6 @@ import reactor.core.publisher.Mono;
 
 /**
  * @author WANGY
- * @date 2020/4/16 18:13
  */
 public class VersionFilter implements GatewayFilter, Ordered {
 

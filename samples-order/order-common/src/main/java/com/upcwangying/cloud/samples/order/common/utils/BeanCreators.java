@@ -33,7 +33,6 @@ import com.upcwangying.cloud.samples.order.common.entity.OrderMainOutput;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/16 16:30
  */
 public class BeanCreators {
     public static OrderMainOutput ceateOrderMainOutput() {

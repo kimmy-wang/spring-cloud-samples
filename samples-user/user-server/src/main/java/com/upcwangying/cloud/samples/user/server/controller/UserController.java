@@ -82,7 +82,6 @@ import static com.upcwangying.cloud.samples.core.enums.ResultEnum.USER_NOT_EXIST
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/25 10:55
  */
 @RestController
 @RequestMapping("/users")

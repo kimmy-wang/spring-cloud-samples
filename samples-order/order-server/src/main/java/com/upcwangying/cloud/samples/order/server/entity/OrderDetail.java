@@ -36,7 +36,6 @@ import java.math.BigDecimal;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/3/26 9:57
  */
 @Entity
 @Data

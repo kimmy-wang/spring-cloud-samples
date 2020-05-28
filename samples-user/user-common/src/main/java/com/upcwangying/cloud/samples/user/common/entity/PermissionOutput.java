@@ -32,7 +32,6 @@ import java.io.Serializable;
  * 权限表
  *
  * @author WANGY
- * @date 2019/4/28 16:10
  */
 public class PermissionOutput implements Serializable {
     private static final long serialVersionUID = 5344579694978611470L;

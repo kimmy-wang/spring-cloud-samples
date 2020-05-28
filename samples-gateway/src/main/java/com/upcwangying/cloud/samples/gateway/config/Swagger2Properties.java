@@ -37,7 +37,6 @@ import java.util.List;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/3/29 14:26
  */
 @Configuration
 @PropertySource("classpath:bootstrap.yml")

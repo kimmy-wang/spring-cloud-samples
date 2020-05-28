@@ -34,7 +34,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/15 15:24
  */
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {

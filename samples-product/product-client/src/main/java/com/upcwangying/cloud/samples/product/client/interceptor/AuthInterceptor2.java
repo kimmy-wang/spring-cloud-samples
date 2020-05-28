@@ -36,7 +36,6 @@ import java.io.IOException;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/20 15:14
  */
 public class AuthInterceptor2 implements Interceptor {
 

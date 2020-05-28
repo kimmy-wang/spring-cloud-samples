@@ -37,7 +37,6 @@ import org.springframework.context.annotation.Scope;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/16 10:41
  */
 //@Configuration
 public class FeignMultipartSupportConfig {

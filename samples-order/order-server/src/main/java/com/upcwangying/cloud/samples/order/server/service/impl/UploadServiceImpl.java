@@ -39,7 +39,6 @@ import org.springframework.web.multipart.MultipartFile;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/16 11:20
  */
 @Service
 @Slf4j

@@ -30,7 +30,6 @@ package com.upcwangying.cloud.samples.user.common.entity;
  * 用户实体类
  *
  * @author WANGY
- * @date 2019/4/18 16:19
  */
 public class UserOutput {
 

@@ -30,7 +30,6 @@ package com.upcwangying.cloud.samples.user.common.enums;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/9 9:42
  */
 public enum UserPermissionType {
 

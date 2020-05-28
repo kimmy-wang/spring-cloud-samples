@@ -33,7 +33,6 @@ import javax.validation.constraints.Size;
  * 用户实体类
  *
  * @author WANGY
- * @date 2019/4/18 16:19
  */
 public class UserInput {
 

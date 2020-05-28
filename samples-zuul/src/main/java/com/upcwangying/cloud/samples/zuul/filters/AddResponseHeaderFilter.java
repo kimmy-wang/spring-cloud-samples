@@ -42,7 +42,6 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * 向response header中添加自定义信息
  *
  * @author WANGY
- * @date 2019/3/27 13:39
  */
 @Component
 public class AddResponseHeaderFilter extends ZuulFilter {

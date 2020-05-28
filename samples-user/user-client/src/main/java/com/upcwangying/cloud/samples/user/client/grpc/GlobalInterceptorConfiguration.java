@@ -31,7 +31,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author WANGY
- * @date 2020/5/5 07:47
  */
 @Configuration
 public class GlobalInterceptorConfiguration {

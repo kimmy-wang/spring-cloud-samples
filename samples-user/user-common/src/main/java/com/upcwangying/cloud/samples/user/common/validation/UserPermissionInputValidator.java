@@ -39,7 +39,6 @@ import javax.validation.ConstraintValidatorContext;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/9 10:41
  */
 public class UserPermissionInputValidator implements ConstraintValidator<UserPermissionInputAnno, UserPermissionInput> {
 

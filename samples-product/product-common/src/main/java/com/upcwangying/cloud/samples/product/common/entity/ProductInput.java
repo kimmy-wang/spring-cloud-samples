@@ -39,7 +39,6 @@ import java.math.BigDecimal;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/3/25 17:01
  */
 @Data
 public class ProductInput implements Serializable {

@@ -32,7 +32,6 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author WANGY
- * @date 2020/5/5 07:43
  */
 public class LogGrpcInterceptor implements ClientInterceptor {
 

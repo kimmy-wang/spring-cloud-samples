@@ -36,7 +36,6 @@ import java.util.List;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/25 10:41
  */
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {

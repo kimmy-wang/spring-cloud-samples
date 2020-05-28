@@ -35,7 +35,6 @@ import java.math.BigDecimal;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/16 15:33
  */
 @Data
 public class OrderDetailOutput implements Serializable {

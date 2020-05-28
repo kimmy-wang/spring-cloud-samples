@@ -48,7 +48,6 @@ import static org.mockito.BDDMockito.given;
  * 如果使用MockMvc对象的话，需要另外加上@AutoConfigureMockMvc注解
  *
  * @author WANGY
- * @date 2019/4/23 10:15
  */
 @WebMvcTest
 public class ProductControllerTest extends ProductServerApplicationTests {

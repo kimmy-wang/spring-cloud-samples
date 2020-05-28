@@ -34,7 +34,6 @@ import org.springframework.context.annotation.Configuration;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/16 9:46
  */
 @Configuration
 public class FeignLoggerConfig {

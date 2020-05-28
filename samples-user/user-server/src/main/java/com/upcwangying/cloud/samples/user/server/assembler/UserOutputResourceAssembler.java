@@ -40,7 +40,6 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/5 14:37
  */
 @Component
 public class UserOutputResourceAssembler implements ResourceAssembler<UserOutput, Resource<UserOutput>> {

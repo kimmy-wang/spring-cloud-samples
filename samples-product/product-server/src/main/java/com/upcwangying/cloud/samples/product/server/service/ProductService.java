@@ -34,7 +34,6 @@ import java.util.List;
  * 商品服务业务层
  *
  * @author WANGY
- * @date 2019/3/25 14:56
  */
 public interface ProductService {
 

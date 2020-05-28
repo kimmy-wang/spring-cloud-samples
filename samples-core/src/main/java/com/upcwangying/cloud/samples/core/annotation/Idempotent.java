@@ -33,7 +33,6 @@ import com.upcwangying.cloud.samples.core.service.impl.DefaultIdempotentServiceI
  * 幂等性接口
  *
  * @author WANGY
- * @date 2019/3/25 16:47
  */
 public @interface Idempotent {
     Class<? extends IdempotentService> fallback() default DefaultIdempotentServiceImpl.class;

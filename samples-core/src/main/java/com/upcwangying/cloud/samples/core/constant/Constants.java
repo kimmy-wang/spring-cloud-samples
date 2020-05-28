@@ -30,7 +30,6 @@ package com.upcwangying.cloud.samples.core.constant;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/25 13:48
  */
 public final class Constants {
 

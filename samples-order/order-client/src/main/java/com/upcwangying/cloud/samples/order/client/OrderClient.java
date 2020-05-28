@@ -32,7 +32,6 @@ import org.springframework.cloud.openfeign.FeignClient;
  * 订单服务API，供其他模块调用
  *
  * @author WANGY
- * @date 2019/3/25 14:43
  */
 @FeignClient("order")
 public interface OrderClient {

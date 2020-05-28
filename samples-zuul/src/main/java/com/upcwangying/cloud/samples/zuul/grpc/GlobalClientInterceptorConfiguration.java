@@ -33,7 +33,6 @@ import org.springframework.core.annotation.Order;
 
 /**
  * @author WANGY
- * @date 2020/5/5 07:42
  */
 @Order(Ordered.LOWEST_PRECEDENCE)
 @Configuration

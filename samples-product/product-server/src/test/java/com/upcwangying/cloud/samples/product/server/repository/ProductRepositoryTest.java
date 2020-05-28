@@ -45,7 +45,6 @@ import java.util.UUID;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/22 14:03
  */
 @DataJpaTest
 @Slf4j

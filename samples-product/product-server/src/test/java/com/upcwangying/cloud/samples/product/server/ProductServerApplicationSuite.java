@@ -36,7 +36,6 @@ import org.junit.runners.Suite;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/23 9:53
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ProductControllerTest.class, ProductServiceImplTest.class, ProductRepositoryTest.class})

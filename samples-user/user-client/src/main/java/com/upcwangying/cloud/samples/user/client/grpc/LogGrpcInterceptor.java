@@ -34,7 +34,6 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author WANGY
- * @date 2020/5/5 07:48
  */
 public class LogGrpcInterceptor implements ServerInterceptor {
     private static final Logger log = LoggerFactory.getLogger(LogGrpcInterceptor.class);

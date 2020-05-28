@@ -42,7 +42,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/16 13:52
  */
 @Documented
 @Constraint(validatedBy = { StringMinLengthValidator.class })

@@ -36,7 +36,6 @@ import java.io.Serializable;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/16 15:33
  */
 @Data
 public class OrderDetailInput implements Serializable {

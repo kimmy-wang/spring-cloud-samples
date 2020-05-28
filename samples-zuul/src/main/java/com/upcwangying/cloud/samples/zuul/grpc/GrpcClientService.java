@@ -34,7 +34,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author WANGY
- * @date 2020/5/5 07:38
  */
 @Service
 public class GrpcClientService {

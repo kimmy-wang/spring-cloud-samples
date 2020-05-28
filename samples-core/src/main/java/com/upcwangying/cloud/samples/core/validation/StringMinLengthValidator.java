@@ -36,7 +36,6 @@ import javax.validation.ConstraintValidatorContext;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/16 13:51
  */
 public class StringMinLengthValidator implements ConstraintValidator<StringMinLength, String> {
     private long strMinLen;

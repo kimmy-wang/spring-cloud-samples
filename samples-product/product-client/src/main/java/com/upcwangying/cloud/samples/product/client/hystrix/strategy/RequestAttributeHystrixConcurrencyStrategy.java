@@ -51,7 +51,6 @@ import java.util.concurrent.TimeUnit;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/20 14:25
  */
 public class RequestAttributeHystrixConcurrencyStrategy extends HystrixConcurrencyStrategy {
     private static final Log log = LogFactory.getLog(RequestAttributeHystrixConcurrencyStrategy.class);

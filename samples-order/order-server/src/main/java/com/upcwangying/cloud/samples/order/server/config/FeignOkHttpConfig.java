@@ -40,7 +40,6 @@ import java.util.concurrent.TimeUnit;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/15 16:18
  */
 @Configuration
 @ConditionalOnClass(Feign.class)

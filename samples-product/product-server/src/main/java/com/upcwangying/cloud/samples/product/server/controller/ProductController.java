@@ -61,7 +61,6 @@ import java.util.stream.Collectors;
  * 商品服务Rest Api
  *
  * @author WANGY
- * @date 2019/3/25 14:53
  */
 @RestController
 @RequestMapping("/products")

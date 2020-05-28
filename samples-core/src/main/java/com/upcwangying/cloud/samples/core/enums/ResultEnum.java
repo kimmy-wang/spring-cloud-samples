@@ -27,11 +27,9 @@
 package com.upcwangying.cloud.samples.core.enums;
 
 /**
- * Created with IntelliJ IDEA.
+ *
+ *
  * @author WANGY
- * @date ${DATE} ${TIME}
- * To change this template use File | Settings | File Templates.
- * Description:
  */
 public enum ResultEnum {
 

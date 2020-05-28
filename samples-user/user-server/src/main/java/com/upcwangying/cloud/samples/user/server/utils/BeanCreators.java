@@ -39,7 +39,6 @@ import static org.apache.commons.lang.StringUtils.EMPTY;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/25 14:26
  */
 public final class BeanCreators extends com.upcwangying.cloud.samples.user.common.utils.BeanCreators {
 

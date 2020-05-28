@@ -40,7 +40,6 @@ import java.util.List;
  * 此接口供其他服务调用
  *
  * @author WANGY
- * @date 2019/3/25 16:47
  */
 @FeignClient(name = "user", fallback = UserClient.UserClientFallback.class)
 public interface UserClient {

@@ -41,7 +41,6 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * Zuul灰色发布
  *
  * @author WANGY
- * @date 2019/4/17 12:58
  */
 @Component
 public class GrayFilter extends ZuulFilter {

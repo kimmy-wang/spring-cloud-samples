@@ -43,7 +43,6 @@ import static com.upcwangying.cloud.samples.core.enums.ResultEnum.PARAM_ERROR;
 /**
  *
  * @author WANGY
- * @date 2019/4/4 9:19
  */
 @ControllerAdvice
 @Slf4j

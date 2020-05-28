@@ -40,7 +40,6 @@ import org.springframework.web.client.RestTemplate;
  * 超时配置
  *
  * @author WANGY
- * @date 2019/3/28 16:36
  */
 @RestController
 @RequestMapping("timeout")

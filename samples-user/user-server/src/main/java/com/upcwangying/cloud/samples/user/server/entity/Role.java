@@ -37,7 +37,6 @@ import java.io.Serializable;
  * 角色表
  *
  * @author WANGY
- * @date 2019/4/28 16:10
  */
 @Data
 @Entity

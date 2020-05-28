@@ -34,7 +34,6 @@ import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/3/27 13:28
  */
 //@Component
 public class ZuulConfig {

@@ -40,7 +40,6 @@ import java.util.stream.Collectors;
  * Swagger-ui配置类
  *
  * @author WANGY
- * @date 2019/3/29 14:15
  */
 @Component
 @Primary

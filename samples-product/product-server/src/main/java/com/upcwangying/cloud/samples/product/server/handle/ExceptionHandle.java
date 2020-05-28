@@ -42,7 +42,6 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author WANGY
- * @date 2019/4/4 9:19
  */
 @ControllerAdvice
 @Slf4j

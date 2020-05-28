@@ -33,7 +33,6 @@ import com.upcwangying.cloud.samples.product.common.entity.ProductOutput;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/25 15:00
  */
 public class BeanCreators {
 

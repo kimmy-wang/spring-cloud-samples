@@ -37,7 +37,6 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/31 12:45
  */
 @Configuration
 public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {

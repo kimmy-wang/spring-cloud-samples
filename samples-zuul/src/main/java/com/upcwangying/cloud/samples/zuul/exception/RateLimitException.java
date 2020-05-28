@@ -34,7 +34,6 @@ import org.springframework.http.HttpStatus;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/3/27 13:37
  */
 public class RateLimitException extends ZuulRuntimeException {
 

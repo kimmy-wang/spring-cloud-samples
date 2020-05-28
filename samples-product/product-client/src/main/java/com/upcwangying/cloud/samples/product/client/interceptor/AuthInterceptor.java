@@ -39,7 +39,6 @@ import java.util.Map;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/17 16:15
  */
 public class AuthInterceptor implements RequestInterceptor {
 

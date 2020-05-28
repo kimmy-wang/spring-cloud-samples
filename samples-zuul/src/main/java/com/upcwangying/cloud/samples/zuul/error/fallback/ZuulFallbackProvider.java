@@ -46,7 +46,6 @@ import java.nio.charset.Charset;
  * 如果后端服务没有启动，或者调用超时，这时候我们希望Zuul提供一种降级功能，而不是将异常暴露出来。
  *
  * @author WANGY
- * @date 2019/3/29 9:36
  */
 @Component
 @Slf4j

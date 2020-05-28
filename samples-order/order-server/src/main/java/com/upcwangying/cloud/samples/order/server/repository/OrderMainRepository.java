@@ -36,7 +36,6 @@ import java.util.List;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/3/25 14:47
  */
 @Repository
 public interface OrderMainRepository extends JpaRepository<OrderMain, String> {

@@ -34,7 +34,6 @@ import java.util.List;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/30 14:49
  */
 public interface PermissionService {
 

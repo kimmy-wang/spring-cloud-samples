@@ -33,7 +33,6 @@ import net.devh.boot.grpc.server.service.GrpcService;
 
 /**
  * @author WANGY
- * @date 2020/5/2 21:02
  */
 @GrpcService
 public class GRpcUserServerService extends GreeterGrpc.GreeterImplBase {

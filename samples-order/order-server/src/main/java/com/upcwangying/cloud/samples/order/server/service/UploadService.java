@@ -32,7 +32,6 @@ import org.springframework.web.multipart.MultipartFile;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/3/25 14:48
  */
 public interface UploadService {
 

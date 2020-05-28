@@ -33,7 +33,6 @@ import java.util.*;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/9 10:25
  */
 public class ValidList<E> implements List<E> {
 

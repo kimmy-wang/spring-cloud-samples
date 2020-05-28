@@ -30,7 +30,6 @@ package com.upcwangying.cloud.samples.core.exception;
  * FallBack异常类
  *
  * @author WANGY
- * @date 2019/3/29 9:21
  */
 public class FallbackException extends SamplesException {
     private static final long serialVersionUID = 3581367359864724861L;

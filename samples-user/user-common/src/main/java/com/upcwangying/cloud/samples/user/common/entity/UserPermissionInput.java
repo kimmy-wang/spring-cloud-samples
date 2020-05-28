@@ -34,7 +34,6 @@ import java.io.Serializable;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/28 16:26
  */
 @UserPermissionInputAnno
 public class UserPermissionInput implements Serializable {

@@ -40,7 +40,6 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * 限流 (基于google令牌桶算法)
  *
  * @author WANGY
- * @date 2019/3/27 13:34
  */
 @Component
 @Slf4j

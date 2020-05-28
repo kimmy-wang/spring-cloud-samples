@@ -35,7 +35,6 @@ import static com.upcwangying.cloud.samples.core.constant.Constants.UNDELETED_ST
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/5/17 9:09
  */
 public class BeanCreators extends com.upcwangying.cloud.samples.order.common.utils.BeanCreators {
     public static OrderMain createOrderMain() {

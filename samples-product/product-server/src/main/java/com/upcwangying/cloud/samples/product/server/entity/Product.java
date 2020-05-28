@@ -37,7 +37,6 @@ import java.math.BigDecimal;
  * 商品实体类
  *
  * @author WANGY
- * @date 2019/3/25 14:54
  */
 @Data
 @ToString

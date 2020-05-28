@@ -36,7 +36,6 @@ import org.springframework.http.HttpStatus;
  * 自定义404和500等页面
  *
  * @author WANGY
- * @date 2019/4/4 10:14
  */
 
 //@Configuration

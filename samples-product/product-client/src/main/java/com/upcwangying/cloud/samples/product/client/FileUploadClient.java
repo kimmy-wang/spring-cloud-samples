@@ -44,7 +44,6 @@ import org.springframework.web.multipart.MultipartFile;
  * Created by WANGY
  *
  * @author WANGY
- * @date 2019/4/16 10:40
  */
 @FeignClient(value = "product",
         fallback = FileUploadClient.FileUploadClientFallback.class,

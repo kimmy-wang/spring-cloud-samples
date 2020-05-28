@@ -43,7 +43,6 @@ import javax.servlet.http.HttpServletResponse;
  * {@link org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration#basicErrorController}
  *
  * @author WANGY
- * @date 2019/4/4 9:48
  */
 @RestController
 public class GlobalErrorController implements ErrorController {
