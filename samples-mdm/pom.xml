@@ -28,7 +28,7 @@
         <spring-cloud-alibaba.version>2.0.2.RELEASE</spring-cloud-alibaba.version>
         <spring-boot-admin.version>2.0.5</spring-boot-admin.version>
         <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
-        <user-client.version>0.1.0-SNAPSHOT</user-client.version>
+        <mdm-client.version>0.1.0-SNAPSHOT</mdm-client.version>
         <swagger-spring.version>1.9.0.RELEASE</swagger-spring.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <grpc.version>1.29.0</grpc.version><!-- CURRENT_GRPC_VERSION -->
@@ -71,9 +71,9 @@
             </dependency>
 
             <dependency>
-                <groupId>com.upcwangying.cloud.samples.user</groupId>
-                <artifactId>user-common</artifactId>
-                <version>${user-client.version}</version>
+                <groupId>com.upcwangying.cloud.samples.mdm</groupId>
+                <artifactId>mdm-common</artifactId>
+                <version>${mdm-client.version}</version>
             </dependency>
 
             <dependency>

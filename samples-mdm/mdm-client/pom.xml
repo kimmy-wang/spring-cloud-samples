@@ -20,8 +20,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.upcwangying.cloud.samples.user</groupId>
-            <artifactId>user-common</artifactId>
+            <groupId>com.upcwangying.cloud.samples.mdm</groupId>
+            <artifactId>mdm-common</artifactId>
         </dependency>
 
         <dependency>
