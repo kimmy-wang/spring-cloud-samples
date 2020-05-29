@@ -149,6 +149,23 @@ Dmaven.test.skip=true, 不执行测试用例，也不编译测试用例类
 </plugin> 
 ```
 
+## Maven archetype
+
+1. 在项目根目录下运行`mvn archetype:create-from-project`
+
+2. 生成archetype项目工程, 在`target/generated-sources/archetype`目录下
+
+## Maven Archetype 配置
+
+
+1. 安装`Maven Archetype Catalog`插件
+
+2. 依次进入设置目录`Settings->Build,Execution,Deployment->Build Tools->Maven Archetype Catalogs`
+
+3. 新增http://192.168.88.82:8081/repository/maven-snapshots/archetype-catalog.xml
+
+4. 新建Maven工程, 勾选`Create from archetype`即可, 其余操作不变.
+
 ## TODO
 
 - [X] Netflix Eureka切换成Nacos Discovery
