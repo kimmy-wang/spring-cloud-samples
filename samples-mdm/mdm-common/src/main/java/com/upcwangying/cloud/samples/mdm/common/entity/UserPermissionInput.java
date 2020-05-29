@@ -26,7 +26,7 @@
 
 package com.upcwangying.cloud.samples.mdm.common.entity;
 
-import com.upcwangying.cloud.samples.user.common.validation.annotation.UserPermissionInputAnno;
+import com.upcwangying.cloud.samples.mdm.common.validation.annotation.UserPermissionInputAnno;
 
 import java.io.Serializable;
 

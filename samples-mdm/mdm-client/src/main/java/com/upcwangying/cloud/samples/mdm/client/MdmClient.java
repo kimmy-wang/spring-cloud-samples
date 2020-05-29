@@ -26,7 +26,7 @@
 
 package com.upcwangying.cloud.samples.mdm.client;
 
-import com.upcwangying.cloud.samples.user.common.entity.PermissionOutput;
+import com.upcwangying.cloud.samples.mdm.common.entity.PermissionOutput;
 import com.upcwangying.cloud.samples.core.vo.ResultVO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
