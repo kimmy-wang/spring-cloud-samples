@@ -37,7 +37,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -60,6 +64,9 @@ public class IdempotentAspect {
 
         MethodSignature signature = (MethodSignature) point.getSignature();
         Method method = signature.getMethod();
+
+//        HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder
+//                .getRequestAttributes()).getResponse();
 
         // 非public方法
         if (!method.isAccessible()) {
@@ -92,7 +99,7 @@ public class IdempotentAspect {
         try {
             IdempotentService service = fallback.newInstance();
             // true: 代表已是幂等性接口; 否则为false
-            boolean idempotentFlag = service.invoke();
+            boolean idempotentFlag = service.isIdempotent();
             if (idempotentFlag) {
                 log.info("幂等性接口");
             } else {

@@ -27,10 +27,12 @@
 package com.upcwangying.cloud.samples.core.service.impl;
 
 import com.upcwangying.cloud.samples.core.service.IdempotentService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DefaultIdempotentServiceImpl implements IdempotentService {
     @Override
-    public boolean invoke() {
+    public boolean isIdempotent() {
         return false;
     }
 }

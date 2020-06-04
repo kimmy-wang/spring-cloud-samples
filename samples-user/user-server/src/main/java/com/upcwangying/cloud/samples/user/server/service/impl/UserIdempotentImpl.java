@@ -33,7 +33,7 @@ import org.springframework.stereotype.Service;
 public class UserIdempotentImpl implements IdempotentService {
 
     @Override
-    public boolean invoke() {
+    public boolean isIdempotent() {
         return true;
     }
 }
