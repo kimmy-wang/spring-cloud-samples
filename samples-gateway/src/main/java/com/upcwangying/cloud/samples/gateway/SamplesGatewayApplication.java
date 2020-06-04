@@ -35,6 +35,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.codec.ServerCodecConfigurer;
 
 @SpringBootApplication
 @EnableSwagger2Doc
@@ -51,5 +52,10 @@ public class SamplesGatewayApplication {
         return builder.routes()
                 .route(r -> r.path("/jd").uri("http://jd.com:80/").id("jd_route"))
                 .build();
+    }
+
+    @Bean
+    public ServerCodecConfigurer serverCodecConfigurer() {
+        return ServerCodecConfigurer.create();
     }
 }

@@ -27,6 +27,7 @@
 package com.upcwangying.cloud.samples.user.server.controller;
 
 import com.upcwangying.cloud.samples.core.annotation.Idempotent;
+import com.upcwangying.cloud.samples.core.annotation.IdempotentParam;
 import com.upcwangying.cloud.samples.user.server.assembler.UserOutputResourceAssembler;
 import com.upcwangying.cloud.samples.core.common.ValidList;
 import com.upcwangying.cloud.samples.core.enums.ResultEnum;
@@ -239,7 +240,10 @@ public class UserController {
      * @return
      */
     @PostMapping("/token")
-    @Idempotent(fallback = UserIdempotentImpl.class)
+    @Idempotent(fallback = UserIdempotentImpl.class, params = {
+            @IdempotentParam(key = "", val = ""),
+            @IdempotentParam(key = "", val = ""),
+    })
     public ResultVO getUserTokenByUsername(@RequestParam("username") String username, @RequestParam("password") String password) {
         if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
             log.error("UserController: getUserTokenByUsername(username={}, password={})", username, password);

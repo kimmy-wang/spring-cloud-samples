@@ -39,7 +39,7 @@ spring:
         file: "classpath: api.json"
         ruleType: gw-api-group
       transport:
-        dashboard: ${SENTINEL_DASHBOARD_HOST：127.0.0.1}:${SENTINEL_DASHBOARD_PORT:9091}
+        dashboard: ${SENTINEL_DASHBOARD_HOST：127.0.0.1}:${SENTINEL_DASHBOARD_PORT:8849}
       filter:
         enabled: true
       scg.fallback:
