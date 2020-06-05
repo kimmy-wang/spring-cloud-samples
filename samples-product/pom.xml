@@ -16,6 +16,7 @@
 
     <modules>
         <module>product-common</module>
+        <module>product-dubbo</module>
         <module>product-server</module>
         <module>product-client</module>
     </modules>
@@ -29,6 +30,7 @@
         <spring-boot-admin.version>2.0.5</spring-boot-admin.version>
         <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
         <product-client.version>0.1.0-SNAPSHOT</product-client.version>
+        <product-dubbo.version>0.1.0-SNAPSHOT</product-dubbo.version>
         <swagger-spring.version>1.9.0.RELEASE</swagger-spring.version>
 
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
@@ -67,6 +69,11 @@
                 <groupId>com.upcwangying.cloud.samples.product</groupId>
                 <artifactId>product-common</artifactId>
                 <version>${product-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.upcwangying.cloud.samples.product</groupId>
+                <artifactId>product-dubbo</artifactId>
+                <version>${product-dubbo.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.spring4all</groupId>

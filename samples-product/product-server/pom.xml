@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>com.upcwangying.cloud.samples.product</groupId>
-            <artifactId>product-common</artifactId>
+            <artifactId>product-dubbo</artifactId>
         </dependency>
 
         <dependency>

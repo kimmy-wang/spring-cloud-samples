@@ -16,6 +16,7 @@
 
     <modules>
         <module>order-common</module>
+        <module>order-dubbo</module>
         <module>order-client</module>
         <module>order-server</module>
     </modules>
@@ -28,8 +29,10 @@
         <spring-cloud-alibaba.version>2.0.2.RELEASE</spring-cloud-alibaba.version>
         <spring-boot-admin.version>2.0.5</spring-boot-admin.version>
         <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
-        <order-client.version>0.1.0-SNAPSHOT</order-client.version>
+        <order-common.version>0.1.0-SNAPSHOT</order-common.version>
+        <order-dubbo.version>0.1.0-SNAPSHOT</order-dubbo.version>
         <product-client.version>0.1.0-SNAPSHOT</product-client.version>
+        <product-dubbo.version>0.1.0-SNAPSHOT</product-dubbo.version>
         <swagger-spring.version>1.9.0.RELEASE</swagger-spring.version>
 
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
@@ -60,12 +63,22 @@
             <dependency>
                 <groupId>com.upcwangying.cloud.samples.order</groupId>
                 <artifactId>order-common</artifactId>
-                <version>${order-client.version}</version>
+                <version>${order-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.upcwangying.cloud.samples.order</groupId>
+                <artifactId>order-dubbo</artifactId>
+                <version>${order-dubbo.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.upcwangying.cloud.samples.product</groupId>
                 <artifactId>product-client</artifactId>
                 <version>${product-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.upcwangying.cloud.samples.product</groupId>
+                <artifactId>product-dubbo</artifactId>
+                <version>${product-dubbo.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>

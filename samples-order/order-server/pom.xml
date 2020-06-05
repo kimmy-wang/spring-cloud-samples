@@ -30,6 +30,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.upcwangying.cloud.samples.product</groupId>
+            <artifactId>product-dubbo</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <exclusions>
