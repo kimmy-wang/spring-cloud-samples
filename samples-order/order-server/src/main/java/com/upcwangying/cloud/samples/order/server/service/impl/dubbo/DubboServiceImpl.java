@@ -25,12 +25,13 @@
 
 package com.upcwangying.cloud.samples.order.server.service.impl.dubbo;
 
+import com.upcwangying.cloud.samples.order.server.service.DubboService;
 import com.upcwangying.cloud.samples.product.dubbo.DubboProductClient;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DubboServiceImpl {
+public class DubboServiceImpl implements DubboService {
 
     @Reference
     private DubboProductClient productClient;

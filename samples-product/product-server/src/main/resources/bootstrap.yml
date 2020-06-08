@@ -10,12 +10,12 @@ spring:
         password: nacos
         name: test
       discovery:
-        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
-        username: nacos
-        password: nacos
+        server-addr: ${spring.cloud.nacos.config.server-addr}
+        username: ${spring.cloud.nacos.config.username}
+        password: ${spring.cloud.nacos.config.password}
 
   zipkin:
-    base-url: http://${ZIPKIN_HOST:192.168.88.87}:${ZIPKIN_PORT:9411}
+    base-url: http://${ZIPKIN_HOST:127.0.0.1}:${ZIPKIN_PORT:9411}
     discovery-client-enabled: false
   sleuth:
     sampler:
@@ -25,11 +25,11 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: Pa55Word
-    url: jdbc:mysql://192.168.88.83:3306/samples_product?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/samples_product?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
   boot:
     admin:
       client:
-        url: http://${ADMIN_HOST:192.168.88.87}:${ADMIN_PORT:9093}
+        url: http://${ADMIN_HOST:127.0.0.1}:${ADMIN_PORT:9093}
         username: ${ADMIN_USERNAME:admin}
         password: ${ADMIN_PASSWORD:admin}
   # 在 Spring Boot 中, 当用户访问了一个不存在的链接时, Spring 默认会将页面重定向到 **/error** 上, 而不会抛出异常.
@@ -52,6 +52,25 @@ spring:
 #      host-mark: running-host
 server:
   port: ${SERVER_PORT:9092}
+
+dubbo:
+  scan:
+    base-packages: com.upcwangying.cloud.samples.product
+  application:
+    name: ${spring.application.name}-dubbo-provider
+  protocols:
+    dubbo:
+      name: dubbo
+      port: -1
+  #    rest:
+  #      name: rest
+  #      port: 9090
+  #      server: netty
+  registry:
+    #   The Spring Cloud Dubbo's registry extension
+    address: ${spring.cloud.nacos.config.server-addr}
+    username: ${spring.cloud.nacos.config.username}
+    password: ${spring.cloud.nacos.config.password}
 
 logging:
   level:

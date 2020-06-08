@@ -5,7 +5,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: Pa55Word
-    url: jdbc:mysql://192.168.88.83:3306/samples_order?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+    url: jdbc:mysql://127.0.0.1:3306/samples_order?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
   zipkin:
     base-url: http://${ZIPKIN_HOST:127.0.0.1}:${ZIPKIN_PORT:9411}
     discovery-client-enabled: false
@@ -30,8 +30,8 @@ spring:
         server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
         username: nacos
         password: nacos
-        metadata:
-          - env: prod
+#        metadata:
+#          - env: prod
   profiles:
     active: dev
   # 在 Spring Boot 中, 当用户访问了一个不存在的链接时, Spring 默认会将页面重定向到 **/error** 上, 而不会抛出异常.

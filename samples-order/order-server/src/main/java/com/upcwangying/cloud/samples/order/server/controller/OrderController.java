@@ -65,8 +65,8 @@ import static com.upcwangying.cloud.samples.core.enums.ResultEnum.DATA_NOT_EXIST
 @Slf4j
 public class OrderController {
 
-    @Value("${eureka.instance.metadata-map.host-mark}")
-    private String grayMark;
+//    @Value("${eureka.instance.metadata-map.host-mark}")
+//    private String grayMark;
 
     @Autowired
     private OrderService orderService;
