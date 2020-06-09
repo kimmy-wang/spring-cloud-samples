@@ -26,8 +26,6 @@
 
 package com.upcwangying.cloud.samples.order.server.entity;
 
-import lombok.Data;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
@@ -38,7 +36,6 @@ import java.math.BigDecimal;
  * @author WANGY
  */
 @Entity
-@Data
 public class OrderMain {
 
     /**
@@ -61,4 +58,36 @@ public class OrderMain {
      * 删除标识
      */
     private char delFlag;
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(String buyer) {
+        this.buyer = buyer;
+    }
+
+    public BigDecimal getOrderPrice() {
+        return orderPrice;
+    }
+
+    public void setOrderPrice(BigDecimal orderPrice) {
+        this.orderPrice = orderPrice;
+    }
+
+    public char getDelFlag() {
+        return delFlag;
+    }
+
+    public void setDelFlag(char delFlag) {
+        this.delFlag = delFlag;
+    }
 }
