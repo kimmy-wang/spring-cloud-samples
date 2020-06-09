@@ -9,7 +9,7 @@ spring:
           lower-case-service-id: true
       routes:
         - id: product_route
-          uri: http://localhost:9002
+          uri: http://localhost:9092
           predicates:
             - Path=/product/**
           filters:
