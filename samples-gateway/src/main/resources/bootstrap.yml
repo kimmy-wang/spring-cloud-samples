@@ -4,21 +4,16 @@ spring:
   cloud:
     gateway:
       enabled: true
-      routes:
-        # Add your routes here.
-        - id: aliyun_route
-          uri: https://www.aliyun.com/
-          predicates:
-            - Path=/product/**
-        - id: httpbin_route
-          uri: https://httpbin.org
-          predicates:
-            - Path=/httpbin/**
-          filters:
-            - RewritePath=/httpbin/(?<segment>.*), /$\{segment}
       discovery:
         locator:
           lower-case-service-id: true
+      routes:
+        - id: product_route
+          uri: http://localhost:9002
+          predicates:
+            - Path=/product/**
+          filters:
+            - StripPrefix=1
 
     nacos:
       config:
@@ -32,14 +27,12 @@ spring:
         password: nacos
 
     sentinel:
-      datasource.ds2.file:
-        file: "classpath: gateway.json"
-        ruleType: gw-flow
-      datasource.ds1.file:
-        file: "classpath: api.json"
+      datasource.ds1.nacos:
+        serverAddr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
+        dataId: gateway-api
         ruleType: gw-api-group
       transport:
-        dashboard: ${SENTINEL_DASHBOARD_HOST：127.0.0.1}:${SENTINEL_DASHBOARD_PORT:8849}
+        dashboard: ${SENTINEL_DASHBOARD_HOST:127.0.0.1}:${SENTINEL_DASHBOARD_PORT:8849}
       filter:
         enabled: true
       scg.fallback:

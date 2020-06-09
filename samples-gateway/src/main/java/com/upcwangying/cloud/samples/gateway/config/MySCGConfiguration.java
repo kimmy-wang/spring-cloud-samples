@@ -41,13 +41,7 @@ public class MySCGConfiguration {
 
     @Bean
     public BlockRequestHandler blockRequestHandler() {
-        return new BlockRequestHandler() {
-            @Override
-            public Mono<ServerResponse> handleRequest(ServerWebExchange exchange,
-                                                      Throwable t) {
-                return ServerResponse.status(444).contentType(MediaType.APPLICATION_JSON)
-                        .body(fromObject("SCS Sentinel block"));
-            }
-        };
+        return (exchange, t) -> ServerResponse.status(444).contentType(MediaType.APPLICATION_JSON)
+                .body(fromObject("SCS Sentinel block"));
     }
 }

@@ -24,27 +24,32 @@
  *
  */
 
-package com.upcwangying.cloud.samples.gateway;
+package com.upcwangying.cloud.samples.gateway.controller;
 
-import com.upcwangying.cloud.samples.gateway.config.Swagger2Properties;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.http.codec.ServerCodecConfigurer;
+import com.upcwangying.cloud.samples.core.utils.ResultVOUtils;
+import com.upcwangying.cloud.samples.core.vo.ResultVO;
+import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-@EnableDiscoveryClient
-@EnableConfigurationProperties(Swagger2Properties.class)
-public class SamplesGatewayApplication {
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-    public static void main(String[] args) {
-        SpringApplication.run(SamplesGatewayApplication.class, args);
+/**
+ * 进入到filter的异常处理，
+ *
+ * @author WANGY
+ */
+@RestController
+public class GlobalErrorController implements ErrorController {
+
+    @Override
+    public String getErrorPath() {
+        return "/error";
     }
 
-    @Bean
-    public ServerCodecConfigurer serverCodecConfigurer() {
-        return ServerCodecConfigurer.create();
+    @RequestMapping("/error")
+    public ResultVO error(HttpServletRequest request, HttpServletResponse response) {
+        return ResultVOUtils.error("自定义错误信息");
     }
 }
