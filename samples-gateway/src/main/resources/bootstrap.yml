@@ -14,6 +14,12 @@ spring:
             - Path=/product/**
           filters:
             - StripPrefix=1
+        - id: order_route
+          uri: http://localhost:9091
+          predicates:
+            - Path=/order/**
+          filters:
+            - StripPrefix=1
 
     nacos:
       config:

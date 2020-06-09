@@ -32,6 +32,18 @@ spring:
         password: nacos
 #        metadata:
 #          - env: prod
+    sentinel:
+      transport:
+        dashboard: ${SENTINEL_DASHBOARD_HOST:127.0.0.1}:${SENTINEL_DASHBOARD_PORT:8849}
+      filter:
+        enabled: true
+      scg.fallback:
+        mode: response
+        response-status: 444
+        response-body: 1234
+      scg:
+        order: -100
+
   profiles:
     active: dev
   # 在 Spring Boot 中, 当用户访问了一个不存在的链接时, Spring 默认会将页面重定向到 **/error** 上, 而不会抛出异常.
