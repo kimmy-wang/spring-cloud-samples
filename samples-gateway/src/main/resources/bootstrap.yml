@@ -9,13 +9,13 @@ spring:
           lower-case-service-id: true
       routes:
         - id: product_route
-          uri: http://localhost:9092
+          uri: lb://product
           predicates:
             - Path=/product/**
           filters:
             - StripPrefix=1
         - id: order_route
-          uri: http://localhost:9091
+          uri: lb://order
           predicates:
             - Path=/order/**
           filters:
