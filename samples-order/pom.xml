@@ -5,11 +5,10 @@
     <parent>
         <artifactId>samples-parent</artifactId>
         <groupId>com.upcwangying.cloud.samples</groupId>
-        <version>0.1.1-SNAPSHOT</version>
+        <version>0.2.0-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
     <artifactId>samples-order</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
     <name>samples-order</name>
     <description>订单模块</description>
     <packaging>pom</packaging>
@@ -28,11 +27,6 @@
         <spring-cloud.version>Finchley.SR4</spring-cloud.version>
         <spring-cloud-alibaba.version>2.0.2.RELEASE</spring-cloud-alibaba.version>
         <spring-boot-admin.version>2.0.5</spring-boot-admin.version>
-        <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
-        <order-common.version>0.1.0-SNAPSHOT</order-common.version>
-        <order-dubbo.version>0.1.0-SNAPSHOT</order-dubbo.version>
-        <product-client.version>0.1.0-SNAPSHOT</product-client.version>
-        <product-dubbo.version>0.1.0-SNAPSHOT</product-dubbo.version>
         <swagger-spring.version>1.9.0.RELEASE</swagger-spring.version>
 
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
@@ -58,27 +52,27 @@
             <dependency>
                 <groupId>com.upcwangying.cloud.samples</groupId>
                 <artifactId>samples-core</artifactId>
-                <version>${samples-core.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.upcwangying.cloud.samples.order</groupId>
                 <artifactId>order-common</artifactId>
-                <version>${order-common.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.upcwangying.cloud.samples.order</groupId>
                 <artifactId>order-dubbo</artifactId>
-                <version>${order-dubbo.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.upcwangying.cloud.samples.product</groupId>
                 <artifactId>product-client</artifactId>
-                <version>${product-client.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.upcwangying.cloud.samples.product</groupId>
                 <artifactId>product-dubbo</artifactId>
-                <version>${product-dubbo.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>

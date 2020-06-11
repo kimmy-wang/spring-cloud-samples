@@ -5,11 +5,10 @@
     <parent>
         <groupId>com.upcwangying.cloud.samples</groupId>
         <artifactId>samples-user</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.2.0-SNAPSHOT</version>
     </parent>
     <groupId>com.upcwangying.cloud.samples.user</groupId>
     <artifactId>user-common</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
     <name>user-common</name>
     <description>用户公用模块</description>
 

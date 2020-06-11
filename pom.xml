@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.upcwangying.cloud.samples</groupId>
     <artifactId>samples-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>samples-parent</name>
     <description> Spring Cloud Samples</description>
@@ -37,8 +37,6 @@
         <spring-cloud.version>Finchley.SR4</spring-cloud.version>
         <spring-cloud-alibaba.version>2.0.2.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud-zuul-ratelimit-version>2.2.3.RELEASE</spring-cloud-zuul-ratelimit-version>
-        <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
-        <user-client.version>0.1.0-SNAPSHOT</user-client.version>
         <ribbon-discovery-filter.version>2.1.0</ribbon-discovery-filter.version>
         <spring-cloud-see.version>1.0.3</spring-cloud-see.version>
         <commons-collections.version>3.2.2</commons-collections.version>
@@ -52,7 +50,7 @@
             <dependency>
                 <groupId>com.upcwangying.cloud.samples.user</groupId>
                 <artifactId>user-client</artifactId>
-                <version>${user-client.version}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
@@ -74,7 +72,7 @@
             <dependency>
                 <groupId>com.upcwangying.cloud.samples</groupId>
                 <artifactId>samples-core</artifactId>
-                <version>${samples-core.version}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>

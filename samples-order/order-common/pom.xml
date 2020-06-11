@@ -5,11 +5,10 @@
     <parent>
         <groupId>com.upcwangying.cloud.samples</groupId>
         <artifactId>samples-order</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.2.0-SNAPSHOT</version>
     </parent>
     <groupId>com.upcwangying.cloud.samples.order</groupId>
     <artifactId>order-common</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
     <name>order-common</name>
     <description>订单公用模块</description>
 

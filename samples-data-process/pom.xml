@@ -5,11 +5,10 @@
     <parent>
         <artifactId>samples-parent</artifactId>
         <groupId>com.upcwangying.cloud.samples</groupId>
-        <version>0.1.1-SNAPSHOT</version>
+        <version>0.2.0-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
     <artifactId>samples-data-process</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
     <name>samples-data-process</name>
     <description>数据处理模块</description>
     <packaging>pom</packaging>

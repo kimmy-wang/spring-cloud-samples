@@ -3,7 +3,7 @@ dubbo:
     #   The Spring Cloud Dubbo's registry extension
     ##  the default value of dubbo-provider-services is "*", that means to subscribe all providers,
     ##  thus it's optimized if subscriber specifies the required providers.
-    address: nacos://127.0.0.1:8848/?username=nacos&password=nacos
+    address: nacos://${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}/?username=nacos&password=nacos
 #    username: nacos
 #    password: nacos
   #   The traditional Dubbo's registry also is supported

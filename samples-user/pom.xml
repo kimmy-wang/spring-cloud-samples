@@ -5,11 +5,10 @@
     <parent>
         <artifactId>samples-parent</artifactId>
         <groupId>com.upcwangying.cloud.samples</groupId>
-        <version>0.1.1-SNAPSHOT</version>
+        <version>0.2.0-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
     <artifactId>samples-user</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
     <name>samples-user</name>
     <description>用户模块</description>
     <packaging>pom</packaging>
@@ -27,8 +26,6 @@
         <spring-cloud.version>Finchley.SR4</spring-cloud.version>
         <spring-cloud-alibaba.version>2.0.2.RELEASE</spring-cloud-alibaba.version>
         <spring-boot-admin.version>2.0.5</spring-boot-admin.version>
-        <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
-        <user-client.version>0.1.0-SNAPSHOT</user-client.version>
         <swagger-spring.version>1.9.0.RELEASE</swagger-spring.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <grpc.version>1.29.0</grpc.version><!-- CURRENT_GRPC_VERSION -->
@@ -67,13 +64,13 @@
             <dependency>
                 <groupId>com.upcwangying.cloud.samples</groupId>
                 <artifactId>samples-core</artifactId>
-                <version>${samples-core.version}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.upcwangying.cloud.samples.user</groupId>
                 <artifactId>user-common</artifactId>
-                <version>${user-client.version}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>

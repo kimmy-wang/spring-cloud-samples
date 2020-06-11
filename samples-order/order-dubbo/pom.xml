@@ -5,10 +5,9 @@
     <parent>
         <artifactId>samples-order</artifactId>
         <groupId>com.upcwangying.cloud.samples</groupId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.2.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.upcwangying.cloud.samples.order</groupId>
     <artifactId>order-dubbo</artifactId>
     <name>order-dubbo</name>

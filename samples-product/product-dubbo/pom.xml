@@ -5,12 +5,11 @@
   <parent>
     <artifactId>samples-product</artifactId>
     <groupId>com.upcwangying.cloud.samples</groupId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
   <groupId>com.upcwangying.cloud.samples.product</groupId>
   <artifactId>product-dubbo</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
   <name>product-dubbo</name>
   <description>商品模块Dubbo API, 供其他模块调用</description>
 

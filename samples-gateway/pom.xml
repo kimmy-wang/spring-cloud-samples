@@ -5,11 +5,10 @@
     <parent>
         <artifactId>samples-parent</artifactId>
         <groupId>com.upcwangying.cloud.samples</groupId>
-        <version>0.1.1-SNAPSHOT</version>
+        <version>0.2.0-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
     <artifactId>samples-gateway</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
     <name>samples-gateway</name>
     <description>网关服务(Spring Cloud Gateway)</description>
 
@@ -17,7 +16,6 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.SR4</spring-cloud.version>
         <spring-cloud-alibaba.version>2.0.2.RELEASE</spring-cloud-alibaba.version>
-        <samples-core.version>0.1.0-SNAPSHOT</samples-core.version>
         <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
     </properties>
 
@@ -133,7 +131,7 @@
             <dependency>
                 <groupId>com.upcwangying.cloud.samples</groupId>
                 <artifactId>samples-core</artifactId>
-                <version>${samples-core.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.spring4all</groupId>

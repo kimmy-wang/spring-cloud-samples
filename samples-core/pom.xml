@@ -5,11 +5,10 @@
     <parent>
         <artifactId>samples-parent</artifactId>
         <groupId>com.upcwangying.cloud.samples</groupId>
-        <version>0.1.1-SNAPSHOT</version>
+        <version>0.2.0-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
     <artifactId>samples-core</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
     <name>samples-core</name>
     <description>核心模块</description>
     <packaging>jar</packaging>

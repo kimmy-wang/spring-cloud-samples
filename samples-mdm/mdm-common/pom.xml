@@ -5,11 +5,10 @@
     <parent>
         <groupId>com.upcwangying.cloud.samples</groupId>
         <artifactId>samples-mdm</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.2.0-SNAPSHOT</version>
     </parent>
     <groupId>com.upcwangying.cloud.samples.mdm</groupId>
     <artifactId>mdm-common</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
     <name>mdm-common</name>
     <description>主数据公用模块</description>
 
