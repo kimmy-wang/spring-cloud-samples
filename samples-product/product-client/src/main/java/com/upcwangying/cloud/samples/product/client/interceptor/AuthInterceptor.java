@@ -45,10 +45,6 @@ public class AuthInterceptor implements RequestInterceptor {
     public AuthInterceptor() {
     }
 
-    /**
-     * GET /products/list/all?productIds=1&productIds=2&productIds=3 HTTP/1.1
-     * @param template
-     */
     @Override
     public void apply(RequestTemplate template) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder

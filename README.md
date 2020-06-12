@@ -66,7 +66,7 @@ RateLimitPreFilter(限流) -> GrayFilter(灰度发布) -> AuthFilter(认证) -> 
 ## Maven dockerfile plugin
 
 ```text
-docker login  -u username -p userpasswd 192.168.88.87
+docker login  -u yourusername -p yourpassword registry.cn-qingdao.aliyuncs.com
 
 mvn package -DskipTests dockerfile:build dockerfile:push
 
@@ -165,6 +165,10 @@ Dmaven.test.skip=true, 不执行测试用例，也不编译测试用例类
 3. 新增http://192.168.88.82:8081/repository/maven-snapshots/archetype-catalog.xml
 
 4. 新建Maven工程, 勾选`Create from archetype`即可, 其余操作不变.
+
+## Deploy
+
+`mvn clean install deploy -P release -Dgpg.passphrase=yourpassword -Ddockerfile.skip=true -DskipTests`
 
 ## TODO
 

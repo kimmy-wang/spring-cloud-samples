@@ -53,9 +53,9 @@ public interface FileUploadClient {
     /***
      * 1.produces,consumes必填
      * 2.注意区分@RequestPart和RequestParam，不要将
-     * @RequestPart(value = "file") 写成@RequestParam(value = "file")
-     * @param file
-     * @return
+     * //@RequestPart(value = "file") 写成@RequestParam(value = "file")
+     * @param file file
+     * @return 文件路径
      */
     @PostMapping(value = "/uploadFile/server",
             produces = {MediaType.APPLICATION_JSON_UTF8_VALUE},
@@ -72,7 +72,7 @@ public interface FileUploadClient {
     }
 
     /**
-     * See {@link <a href="https://github.com/OpenFeign/feign-form"></a>}
+     * See @link <a href="https://github.com/OpenFeign/feign-form"></a>
      */
     @Component
     static class MultipartSupportConfig {
