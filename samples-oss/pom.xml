@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>samples-parent</artifactId>
+        <groupId>com.upcwangying.cloud.samples</groupId>
+        <version>0.2.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>samples-oss</artifactId>
+    <packaging>pom</packaging>
+    <name>samples-oss</name>
+    <description>samples-oss</description>
+
+    <modules>
+        <module>oss-common</module>
+        <module>oss-api</module>
+        <module>oss-mybatis</module>
+        <module>oss-web</module>
+    </modules>
+
+    <build>
+        <finalName>samples-oss</finalName>
+    </build>
+</project>
