@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
   admin:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/samples-admin:0.2.0-SNAPSHOT
+    image: registry.cn-qingdao.aliyuncs.com/upcwangying/samples-admin:0.2.0
     restart: on-failure
     networks:
       - samples
@@ -15,7 +15,7 @@ services:
       SERVER_PORT: 8080
 
   gateway:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/samples-gateway:0.2.0-SNAPSHOT
+    image: registry.cn-qingdao.aliyuncs.com/upcwangying/samples-gateway:0.2.0
     restart: on-failure
     networks:
       - samples
@@ -32,7 +32,7 @@ services:
       - user
 
   product:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/product-server:0.2.0-SNAPSHOT
+    image: registry.cn-qingdao.aliyuncs.com/upcwangying/product-server:0.2.0
     restart: on-failure
     networks:
       - samples
@@ -51,7 +51,7 @@ services:
       - admin
 
   order:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/order-server:0.2.0-SNAPSHOT
+    image: registry.cn-qingdao.aliyuncs.com/upcwangying/order-server:0.2.0
     restart: on-failure
     networks:
       - samples
