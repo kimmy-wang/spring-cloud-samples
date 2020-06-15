@@ -5,7 +5,7 @@
     <parent>
         <artifactId>samples-parent</artifactId>
         <groupId>com.upcwangying.cloud.samples</groupId>
-        <version>0.2.0</version>
+        <version>0.2.0.RELEASE</version>
         <relativePath>..</relativePath>
     </parent>
     <artifactId>samples-eureka</artifactId>

@@ -2,20 +2,20 @@ version: '3.3'
 
 services:
 
-  admin:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/samples-admin:0.2.0
-    restart: on-failure
-    networks:
-      - samples
-    ports:
-      - "9093:8080"
-    environment:
-      JAVA_OPTS: '-server -Xmx1g'
-      PROFILE: 'default'
-      SERVER_PORT: 8080
+#  admin:
+#    image: registry.cn-qingdao.aliyuncs.com/upcwangying/samples-admin:0.2.0.RELEASE
+#    restart: on-failure
+#    networks:
+#      - samples
+#    ports:
+#      - "9093:8080"
+#    environment:
+#      JAVA_OPTS: '-server -Xmx1g'
+#      PROFILE: 'default'
+#      SERVER_PORT: 8080
 
   gateway:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/samples-gateway:0.2.0
+    image: registry.cn-qingdao.aliyuncs.com/upcwangying/samples-gateway:0.2.0.RELEASE
     restart: on-failure
     networks:
       - samples
@@ -27,12 +27,11 @@ services:
       SERVER_PORT: 8080
       NACOS_HOST: '192.168.88.87'
       SENTINEL_DASHBOARD_HOST: '192.168.88.87'
-    depends_on:
-      - eureka
-      - user
+#    depends_on:
+#      - user
 
   product:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/product-server:0.2.0
+    image: registry.cn-qingdao.aliyuncs.com/upcwangying/product-server:0.2.0.RELEASE
     restart: on-failure
     networks:
       - samples
@@ -43,16 +42,15 @@ services:
       PROFILE: 'default'
       SERVER_PORT: 8080
       NACOS_HOST: '192.168.88.87'
-      MYSQL_HOST: '192.168.88.'
+      MYSQL_HOST: '192.168.88.3'
       SENTINEL_DASHBOARD_HOST: '192.168.88.87'
-      ADMIN_HOST: 'admin'
-      ADMIN_PORT: 8080
-    depends_on:
-      - eureka
-      - admin
+#      ADMIN_HOST: 'admin'
+#      ADMIN_PORT: 8080
+#    depends_on:
+#      - admin
 
   order:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/order-server:0.2.0
+    image: registry.cn-qingdao.aliyuncs.com/upcwangying/order-server:0.2.0.RELEASE
     restart: on-failure
     networks:
       - samples
@@ -63,13 +61,12 @@ services:
       PROFILE: 'default'
       SERVER_PORT: 8080
       NACOS_HOST: '192.168.88.87'
-      MYSQL_HOST: '192.168.88.'
+      MYSQL_HOST: '192.168.88.3'
       SENTINEL_DASHBOARD_HOST: '192.168.88.87'
-      ADMIN_HOST: 'admin'
-      ADMIN_PORT: 8080
-    depends_on:
-      - eureka
-      - admin
+#      ADMIN_HOST: 'admin'
+#      ADMIN_PORT: 8080
+#    depends_on:
+#      - admin
 
 networks:
   samples:

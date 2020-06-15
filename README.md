@@ -1,5 +1,8 @@
 ## Spring Cloud Samples
 
+![Maven Central](https://img.shields.io/maven-central/v/com.upcwangying.cloud.samples/samples-parent)
+![GitHub](https://img.shields.io/github/license/upcwangying/spring-cloud-samples)
+
 这是一个Spring Cloud 样例项目
 
 ## 项目依赖

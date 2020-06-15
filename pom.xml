@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.upcwangying.cloud.samples</groupId>
     <artifactId>samples-parent</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.0.RELEASE</version>
     <packaging>pom</packaging>
     <name>samples-parent</name>
     <description> Spring Cloud Samples</description>

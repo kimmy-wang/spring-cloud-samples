@@ -9,5 +9,5 @@ docker run -d -p 9091:8080 --rm \
 -e EUREKA_SERVER_HOST=127.0.0.1 \
 -e ADMIN_HOST=127.0.0.1 \
 -e ADMIN_PORT=9093 \
-registry.cn-qingdao.aliyuncs.com/upcwangying/order-server:0.2.0
+registry.cn-qingdao.aliyuncs.com/upcwangying/order-server:0.2.0.RELEASE
 ```

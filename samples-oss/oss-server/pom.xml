@@ -6,7 +6,7 @@
   <parent>
     <artifactId>samples-oss</artifactId>
     <groupId>com.upcwangying.cloud.samples</groupId>
-    <version>0.2.0</version>
+    <version>0.2.0.RELEASE</version>
   </parent>
   <groupId>com.upcwangying.cloud.samples.oss</groupId>
   <artifactId>oss-server</artifactId>
