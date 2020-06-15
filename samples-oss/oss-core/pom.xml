@@ -19,12 +19,12 @@
       <version>${project.version}</version>
     </dependency>
 
-    <dependency>
-      <groupId>com.upcwangying.cloud.samples.oss</groupId>
-      <artifactId>oss-mybatis</artifactId>
-      <type>test-jar</type>
-      <version>${project.version}</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.upcwangying.cloud.samples.oss</groupId>-->
+<!--      <artifactId>oss-mybatis</artifactId>-->
+<!--      <type>test-jar</type>-->
+<!--      <version>${project.version}</version>-->
+<!--    </dependency>-->
 
     <dependency>
       <groupId>junit</groupId>

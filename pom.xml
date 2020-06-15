@@ -47,7 +47,7 @@
         <commons-collections.version>3.2.2</commons-collections.version>
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
         <swagger-spring.version>1.9.0.RELEASE</swagger-spring.version>
-        <grpc.version>1.29.0</grpc.version><!-- CURRENT_GRPC_VERSION -->
+        <grpc.version>1.30.0</grpc.version><!-- CURRENT_GRPC_VERSION -->
         <grpc-spring-boot-starter.version>2.9.0.RELEASE</grpc-spring-boot-starter.version>
 
         <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>

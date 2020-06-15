@@ -35,8 +35,8 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: Pa55Word
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:Pa55Word}
     url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/samples_product?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
   boot:
     admin:

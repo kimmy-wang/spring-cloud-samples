@@ -1,10 +1,10 @@
-package com.upcwangying.cloud.samples.oss;
+package com.upcwangying.cloud.samples.oss.server;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class App
 {
     public static void main( String[] args )
     {

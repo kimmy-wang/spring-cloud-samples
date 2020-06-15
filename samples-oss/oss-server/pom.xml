@@ -13,6 +13,14 @@
   <name>oss-server</name>
   <description>oss-server</description>
 
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
   <build>
     <finalName>oss-server</finalName>
   </build>

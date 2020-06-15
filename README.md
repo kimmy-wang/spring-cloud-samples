@@ -170,6 +170,8 @@ Dmaven.test.skip=true, 不执行测试用例，也不编译测试用例类
 
 `mvn clean install deploy -P release -Dgpg.passphrase=yourpassword -Ddockerfile.skip=true -DskipTests`
 
+`mvn clean install package -DskipTests -Ddockerfile.push.skip=true`
+
 ## TODO
 
 - [X] Netflix Eureka切换成Nacos Discovery
