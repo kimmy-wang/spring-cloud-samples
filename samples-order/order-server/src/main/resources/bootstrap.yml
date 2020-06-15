@@ -27,10 +27,10 @@ spring:
         password: nacos
         name: test
       discovery:
-        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
-        username: nacos
-        password: nacos
-#        metadata:
+        server-addr: ${spring.cloud.nacos.config.server-addr}
+        username: ${spring.cloud.nacos.config.username}
+        password: ${spring.cloud.nacos.config.password}
+    #        metadata:
 #          - env: prod
     sentinel:
       transport:

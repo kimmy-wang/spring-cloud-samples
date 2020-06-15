@@ -18,12 +18,6 @@
         <module>data-process-streaming</module>
     </modules>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.SR4</spring-cloud.version>
-        <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>

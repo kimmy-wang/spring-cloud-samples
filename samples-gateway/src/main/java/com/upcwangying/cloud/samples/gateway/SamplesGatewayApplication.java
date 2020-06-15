@@ -43,8 +43,8 @@ public class SamplesGatewayApplication {
         SpringApplication.run(SamplesGatewayApplication.class, args);
     }
 
-    @Bean
-    public ServerCodecConfigurer serverCodecConfigurer() {
-        return ServerCodecConfigurer.create();
-    }
+//    @Bean
+//    public ServerCodecConfigurer serverCodecConfigurer() {
+//        return ServerCodecConfigurer.create();
+//    }
 }

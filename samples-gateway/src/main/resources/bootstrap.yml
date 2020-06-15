@@ -1,4 +1,6 @@
 spring:
+#  main:
+#    allow-bean-definition-overriding: true
   application:
     name: gateway
   cloud:
@@ -28,9 +30,9 @@ spring:
         username: nacos
         password: nacos
       discovery:
-        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
-        username: nacos
-        password: nacos
+        server-addr: ${spring.cloud.nacos.config.server-addr}
+        username: ${spring.cloud.nacos.config.username}
+        password: ${spring.cloud.nacos.config.password}
 
     sentinel:
       datasource.ds1.nacos:
