@@ -49,6 +49,7 @@
         <swagger-spring.version>1.9.0.RELEASE</swagger-spring.version>
         <grpc.version>1.30.0</grpc.version><!-- CURRENT_GRPC_VERSION -->
         <grpc-spring-boot-starter.version>2.9.0.RELEASE</grpc-spring-boot-starter.version>
+        <jasypt-spring-boot-starter>3.0.3</jasypt-spring-boot-starter>
 
         <docker.image.prefix>registry.cn-qingdao.aliyuncs.com/upcwangying</docker.image.prefix>
         <maven.prefix>https://repo.rdc.aliyun.com/repository</maven.prefix>
@@ -112,6 +113,12 @@
                 <groupId>commons-collections</groupId>
                 <artifactId>commons-collections</artifactId>
                 <version>${commons-collections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt-spring-boot-starter}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -54,6 +54,16 @@ spring:
 server:
   port: ${SERVER_PORT:9090}
 
+# 加密所需的salt(盐)
+jasypt:
+  encryptor:
+   password: testtesttest
+   iv-generator-classname: org.jasypt.iv.NoIvGenerator
+# 默认加密方式PBEWithMD5AndDES,可以更改为PBEWithMD5AndTripleDES
+   algorithm: PBEWithMD5AndDES
+#spring.datasource.username=ENC(FFS/1gsUddgqNFPu+jRqag==)
+#spring.datasource.password=ENC(k7aNofHMY0VqoyMw7LIMBQ==)
+
 #eureka:
 #  client:
 #    security:
