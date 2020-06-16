@@ -30,7 +30,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.upcwangying.cloud.samples.core.exception.FallbackException;
 import com.upcwangying.cloud.samples.core.utils.ResultVOUtils;
 import com.upcwangying.cloud.samples.core.vo.ResultVO;
-import com.upcwangying.cloud.samples.user.client.UserClient;
+import com.upcwangying.cloud.samples.user.feign.UserClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

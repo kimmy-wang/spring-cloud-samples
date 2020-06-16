@@ -102,7 +102,7 @@ TODO...
 
 ## 测试用例
 
-测试用例在spring-cloud-samples/samples-product/product-server/src/test目录下
+测试用例在spring-cloud-samples/samples-product/product-web/src/test目录下
 
 注意
 

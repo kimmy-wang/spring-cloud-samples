@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: product
+  cloud:
+    nacos:
+      config:
+        namespace: 7433eb3a-afec-42ea-80e3-f33c7d07d57d
+        file-extension: yaml
+        server-addr: 192.168.88.87:8848
+#      discovery:
+#        namespace: 7433eb3a-afec-42ea-80e3-f33c7d07d57d
+#        server-addr: 192.168.88.87:8848
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:9093
+
+#eureka:
+#  client:
+#    security:
+#      basic:
+#        user: admin
+#        password: admin
+#    service-url:
+#      defaultZone: http://${eureka.client.security.basic.user}:${eureka.client.security.basic.password}@localhost:8762/eureka/
+#  instance:
+#    metadata-map:
+#      host-mark: running-host
+server:
+  port: 9092
+
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

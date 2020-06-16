@@ -31,7 +31,7 @@ services:
 #      - user
 
   product:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/product-server:0.2.0.RELEASE
+    image: registry.cn-qingdao.aliyuncs.com/upcwangying/product-web:0.2.0.RELEASE
     restart: on-failure
     networks:
       - samples
@@ -50,7 +50,7 @@ services:
 #      - admin
 
   order:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/order-server:0.2.0.RELEASE
+    image: registry.cn-qingdao.aliyuncs.com/upcwangying/order-web:0.2.0.RELEASE
     restart: on-failure
     networks:
       - samples

@@ -15,8 +15,8 @@
 
     <modules>
         <module>mdm-common</module>
-        <module>mdm-client</module>
-        <module>mdm-server</module>
+        <module>mdm-feign</module>
+        <module>mdm-web</module>
     </modules>
 
     <dependencyManagement>

@@ -15,8 +15,8 @@
 
     <modules>
         <module>user-common</module>
-        <module>user-client</module>
-        <module>user-server</module>
+        <module>user-feign</module>
+        <module>user-web</module>
     </modules>
 
     <dependencyManagement>

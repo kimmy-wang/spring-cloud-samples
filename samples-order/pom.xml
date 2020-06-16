@@ -16,8 +16,8 @@
     <modules>
         <module>order-common</module>
         <module>order-dubbo</module>
-        <module>order-client</module>
-        <module>order-server</module>
+        <module>order-feign</module>
+        <module>order-web</module>
     </modules>
 
     <dependencyManagement>
@@ -53,7 +53,7 @@
             </dependency>
             <dependency>
                 <groupId>com.upcwangying.cloud.samples.product</groupId>
-                <artifactId>product-client</artifactId>
+                <artifactId>product-feign</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

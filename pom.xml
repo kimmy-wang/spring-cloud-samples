@@ -59,7 +59,7 @@
         <dependencies>
             <dependency>
                 <groupId>com.upcwangying.cloud.samples.user</groupId>
-                <artifactId>user-client</artifactId>
+                <artifactId>user-feign</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
