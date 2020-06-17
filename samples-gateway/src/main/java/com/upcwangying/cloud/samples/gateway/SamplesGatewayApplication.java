@@ -27,7 +27,9 @@
 package com.upcwangying.cloud.samples.gateway;
 
 import com.upcwangying.cloud.samples.gateway.config.Swagger2Properties;
+import com.upcwangying.cloud.samples.gateway.filters.RateLimitFilterByCpu;
 import com.upcwangying.cloud.samples.gateway.filters.RateLimitFilterByIp;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -45,18 +47,26 @@ import java.time.Duration;
 @EnableConfigurationProperties(Swagger2Properties.class)
 public class SamplesGatewayApplication {
 
+    @Autowired
+    private RateLimitFilterByCpu rateLimitFilterByCpu;
+
     public static void main(String[] args) {
         SpringApplication.run(SamplesGatewayApplication.class, args);
     }
 
     @Bean
-    public RouteLocator customerRouteLocator(RouteLocatorBuilder builder) {
+    public RouteLocator rateLimit(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.path("/product/products")
-                        .filters(f -> f.filter(new RateLimitFilterByIp(10,1, Duration.ofSeconds(1))))
-                        .uri("https://localhost:9092/products")
-                        .id("rateLimit_route")
-                ).build();
+                .route(r -> r.path("/rateLimitByIp")
+                        .filters(f -> f.filter(new RateLimitFilterByIp(10, 1, Duration.ofSeconds(1))))
+                        .uri("lb://product")
+                        .id("rateLimitByIp_route")
+                )
+                .route(r -> r.path("/rateLimitByCpu")
+                        .filters(f -> f.filter(rateLimitFilterByCpu))
+                        .uri("lb://product")
+                        .id("rateLimitByCpu_route"))
+                .build();
     }
 
 //    @Bean
