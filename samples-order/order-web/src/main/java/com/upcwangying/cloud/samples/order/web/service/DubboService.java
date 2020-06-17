@@ -25,7 +25,11 @@
 
 package com.upcwangying.cloud.samples.order.web.service;
 
+import com.upcwangying.cloud.samples.core.vo.ResultVO;
+
 public interface DubboService {
 
     String say(String name);
+
+    ResultVO getProducts();
 }

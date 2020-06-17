@@ -25,6 +25,8 @@
 
 package com.upcwangying.cloud.samples.product.dubbo;
 
+import com.upcwangying.cloud.samples.core.vo.ResultVO;
+
 /**
  * Dubbo接口
  *
@@ -33,4 +35,6 @@ package com.upcwangying.cloud.samples.product.dubbo;
 public interface DubboProductClient {
 
     String sayHiTo(String name);
+
+    ResultVO getProducts();
 }

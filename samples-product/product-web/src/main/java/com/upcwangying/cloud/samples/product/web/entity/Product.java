@@ -26,9 +26,6 @@
 
 package com.upcwangying.cloud.samples.product.web.entity;
 
-import lombok.Data;
-import lombok.ToString;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
@@ -38,8 +35,6 @@ import java.math.BigDecimal;
  *
  * @author WANGY
  */
-@Data
-@ToString
 @Entity
 public class Product {
 
@@ -74,4 +69,63 @@ public class Product {
      */
     private char delFlag;
 
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getProductDesc() {
+        return productDesc;
+    }
+
+    public void setProductDesc(String productDesc) {
+        this.productDesc = productDesc;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public long getStock() {
+        return stock;
+    }
+
+    public void setStock(long stock) {
+        this.stock = stock;
+    }
+
+    public char getDelFlag() {
+        return delFlag;
+    }
+
+    public void setDelFlag(char delFlag) {
+        this.delFlag = delFlag;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId='" + productId + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productDesc='" + productDesc + '\'' +
+                ", price=" + price +
+                ", stock=" + stock +
+                ", delFlag=" + delFlag +
+                '}';
+    }
 }

@@ -42,4 +42,10 @@ public class DubboController {
     public ResultVO say() {
         return ResultVOUtils.success(dubboService.say("Kimmy"));
     }
+
+    @GetMapping("/dubbo1")
+    public ResultVO getProducts() {
+        return dubboService.getProducts();
+    }
+
 }

@@ -33,10 +33,12 @@ import com.upcwangying.cloud.samples.core.utils.ResultVOUtils;
 import com.upcwangying.cloud.samples.core.vo.ResultVO;
 import com.upcwangying.cloud.samples.product.common.entity.ProductInput;
 import com.upcwangying.cloud.samples.product.common.entity.ProductOutput;
+import com.upcwangying.cloud.samples.product.dubbo.DubboProductClient;
 import com.upcwangying.cloud.samples.product.web.entity.Product;
 import com.upcwangying.cloud.samples.product.web.service.ProductService;
 import com.upcwangying.cloud.samples.product.web.utils.BeanCreators;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
@@ -63,9 +65,10 @@ import java.util.stream.Collectors;
  * @author WANGY
  */
 @RestController
+@Service(protocol = "dubbo")
 @RequestMapping("/products")
 @Slf4j
-public class ProductController {
+public class ProductController implements DubboProductClient {
 
     @Autowired
     private ProductService productService;
@@ -76,12 +79,7 @@ public class ProductController {
      */
     @GetMapping
     public ResultVO getAllProduct() {
-        List<ProductOutput> productOutputList = productService.getAllProduct().stream().map(product -> {
-            ProductOutput productOutput = BeanCreators.createProductOutput();
-            BeanUtils.copyProperties(product, productOutput);
-            return productOutput;
-        }).collect(Collectors.toList());
-        return ResultVOUtils.success(productOutputList);
+        return getProducts();
     }
 
     /**
@@ -130,6 +128,10 @@ public class ProductController {
             log.error("ProductController: getProductListByProductIds(productIds={})", productIds);
             return ResultVOUtils.error(ResultEnum.PARAM_ERROR);
         }
+        return getProductsByIds(productIds);
+    }
+
+    private ResultVO getProductsByIds(List<String> productIds) {
         Map<String, ProductOutput> productOutputMap = productService.getProductById(productIds).stream()
                 .map(product -> {
                     ProductOutput output = BeanCreators.createProductOutput();
@@ -216,6 +218,21 @@ public class ProductController {
         BeanUtils.copyProperties(resultProduct, productOutput);
 
         return ResultVOUtils.success(productOutput);
+    }
+
+    @Override
+    public String sayHiTo(String name) {
+        return String.format("Hello, %s", name);
+    }
+
+    @Override
+    public ResultVO getProducts() {
+        List<ProductOutput> productOutputList = productService.getAllProduct().stream().map(product -> {
+            ProductOutput productOutput = BeanCreators.createProductOutput();
+            BeanUtils.copyProperties(product, productOutput);
+            return productOutput;
+        }).collect(Collectors.toList());
+        return ResultVOUtils.success(productOutputList);
     }
 
 }

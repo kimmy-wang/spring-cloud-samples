@@ -25,6 +25,7 @@
 
 package com.upcwangying.cloud.samples.order.web.service.impl.dubbo;
 
+import com.upcwangying.cloud.samples.core.vo.ResultVO;
 import com.upcwangying.cloud.samples.order.web.service.DubboService;
 import com.upcwangying.cloud.samples.product.dubbo.DubboProductClient;
 import org.apache.dubbo.config.annotation.Reference;
@@ -39,4 +40,9 @@ public class DubboServiceImpl implements DubboService {
     public String say(String name) {
         return productClient.sayHiTo(name);
     }
+
+    public ResultVO getProducts() {
+        return productClient.getProducts();
+    }
+
 }

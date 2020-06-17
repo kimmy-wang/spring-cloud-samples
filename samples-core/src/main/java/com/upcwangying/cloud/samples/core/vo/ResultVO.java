@@ -26,7 +26,9 @@
 
 package com.upcwangying.cloud.samples.core.vo;
 
-public class ResultVO<T> {
+import java.io.Serializable;
+
+public class ResultVO<T> implements Serializable {
 
     private Integer code;
 
