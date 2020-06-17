@@ -6,6 +6,12 @@ spring:
   cloud:
     gateway:
       enabled: true
+      httpclient:
+        ssl:
+          use-insecure-trust-manager: true
+#          trusted-x509-certificates:
+#            - cert1.pem
+#            - cert2.pem
       discovery:
         locator:
           lower-case-service-id: true
@@ -53,6 +59,13 @@ spring:
 
 server:
   port: ${SERVER_PORT:9090}
+  ssl:
+    enabled: true
+    key-alias: samples
+    key-password: 09083213
+    key-store: classpath:samples.jks
+    key-store-password: 09083213
+    key-store-type: JKS
 
 # 加密所需的salt(盐)
 jasypt:
