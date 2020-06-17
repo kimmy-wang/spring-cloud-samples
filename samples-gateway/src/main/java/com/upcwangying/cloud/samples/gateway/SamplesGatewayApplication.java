@@ -27,13 +27,18 @@
 package com.upcwangying.cloud.samples.gateway;
 
 import com.upcwangying.cloud.samples.gateway.config.Swagger2Properties;
+import com.upcwangying.cloud.samples.gateway.filters.RateLimitFilterByIp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.codec.ServerCodecConfigurer;
+
+import java.time.Duration;
 
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -42,6 +47,16 @@ public class SamplesGatewayApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SamplesGatewayApplication.class, args);
+    }
+
+    @Bean
+    public RouteLocator customerRouteLocator(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route(r -> r.path("/product/products")
+                        .filters(f -> f.filter(new RateLimitFilterByIp(10,1, Duration.ofSeconds(1))))
+                        .uri("https://localhost:9092/products")
+                        .id("rateLimit_route")
+                ).build();
     }
 
 //    @Bean
