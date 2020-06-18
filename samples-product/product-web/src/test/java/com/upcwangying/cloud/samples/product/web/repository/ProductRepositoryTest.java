@@ -28,11 +28,13 @@ package com.upcwangying.cloud.samples.product.web.repository;
 
 import com.upcwangying.cloud.samples.product.web.ProductServerApplicationTests;
 import com.upcwangying.cloud.samples.product.web.entity.Product;
-import lombok.extern.slf4j.Slf4j;
+import com.upcwangying.cloud.samples.product.web.service.impl.ProductServiceImplTest;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
@@ -47,8 +49,8 @@ import java.util.UUID;
  * @author WANGY
  */
 @DataJpaTest
-@Slf4j
 public class ProductRepositoryTest extends ProductServerApplicationTests {
+    private static Logger log = LoggerFactory.getLogger(ProductRepositoryTest.class);
 
     @Autowired
     private ProductRepository productRepository;

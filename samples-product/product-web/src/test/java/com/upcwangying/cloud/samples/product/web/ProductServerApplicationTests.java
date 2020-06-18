@@ -26,12 +26,13 @@
 
 package com.upcwangying.cloud.samples.product.web;
 
-import lombok.extern.slf4j.Slf4j;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -47,9 +48,9 @@ import org.springframework.test.context.junit4.SpringRunner;
  *
  */
 @RunWith(SpringRunner.class)
-@Slf4j
 @ActiveProfiles(profiles = "test") //在测试类上面指定profiles，可以改变当前spring 的profile，来达到多环境的测试
 public class ProductServerApplicationTests {
+    private static Logger log = LoggerFactory.getLogger(ProductServerApplicationTests.class);
 
     /**
      * 在单个测试类所有测试方法前执行一次，一般在其中写上整体初始化的代码

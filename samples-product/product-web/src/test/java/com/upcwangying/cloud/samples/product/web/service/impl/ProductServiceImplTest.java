@@ -31,9 +31,10 @@ import com.upcwangying.cloud.samples.product.web.entity.Product;
 import com.upcwangying.cloud.samples.product.web.repository.ProductRepository;
 import com.upcwangying.cloud.samples.product.web.service.ProductService;
 import com.upcwangying.cloud.samples.product.web.utils.BeanCreators;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -49,8 +50,8 @@ import static org.mockito.BDDMockito.given;
  * @author WANGY
  */
 @SpringBootTest
-@Slf4j
 public class ProductServiceImplTest extends ProductServerApplicationTests {
+    private static Logger log = LoggerFactory.getLogger(ProductServiceImplTest.class);
 
     @Autowired
     private ProductService productService;
