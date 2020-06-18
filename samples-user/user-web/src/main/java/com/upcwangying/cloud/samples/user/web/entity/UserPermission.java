@@ -26,9 +26,6 @@
 
 package com.upcwangying.cloud.samples.user.web.entity;
 
-import lombok.Data;
-import lombok.ToString;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -38,9 +35,7 @@ import java.io.Serializable;
  *
  * @author WANGY
  */
-@Data
 @Entity
-@ToString
 public class UserPermission implements Serializable {
     private static final long serialVersionUID = -7588876057727552536L;
 
@@ -75,4 +70,63 @@ public class UserPermission implements Serializable {
      */
     private char delFlag;
 
+    public String getUserPermissionId() {
+        return userPermissionId;
+    }
+
+    public void setUserPermissionId(String userPermissionId) {
+        this.userPermissionId = userPermissionId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getPermissionId() {
+        return permissionId;
+    }
+
+    public void setPermissionId(String permissionId) {
+        this.permissionId = permissionId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public char getDelFlag() {
+        return delFlag;
+    }
+
+    public void setDelFlag(char delFlag) {
+        this.delFlag = delFlag;
+    }
+
+    @Override
+    public String toString() {
+        return "UserPermission{" +
+                "userPermissionId='" + userPermissionId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", roleId='" + roleId + '\'' +
+                ", permissionId='" + permissionId + '\'' +
+                ", type='" + type + '\'' +
+                ", delFlag=" + delFlag +
+                '}';
+    }
 }

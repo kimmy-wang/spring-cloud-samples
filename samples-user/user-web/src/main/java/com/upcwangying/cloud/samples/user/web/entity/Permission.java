@@ -26,9 +26,6 @@
 
 package com.upcwangying.cloud.samples.user.web.entity;
 
-import lombok.Data;
-import lombok.ToString;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -38,9 +35,7 @@ import java.io.Serializable;
  *
  * @author WANGY
  */
-@Data
 @Entity
-@ToString
 public class Permission implements Serializable {
     private static final long serialVersionUID = 547515537777310241L;
 
@@ -79,4 +74,73 @@ public class Permission implements Serializable {
      * 删除标识
      */
     private char delFlag;
+
+    public String getPermissionId() {
+        return permissionId;
+    }
+
+    public void setPermissionId(String permissionId) {
+        this.permissionId = permissionId;
+    }
+
+    public String getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getPermissionName() {
+        return permissionName;
+    }
+
+    public void setPermissionName(String permissionName) {
+        this.permissionName = permissionName;
+    }
+
+    public String getPermissionPath() {
+        return permissionPath;
+    }
+
+    public void setPermissionPath(String permissionPath) {
+        this.permissionPath = permissionPath;
+    }
+
+    public String getRequestMethod() {
+        return requestMethod;
+    }
+
+    public void setRequestMethod(String requestMethod) {
+        this.requestMethod = requestMethod;
+    }
+
+    public String getPermissionDesc() {
+        return permissionDesc;
+    }
+
+    public void setPermissionDesc(String permissionDesc) {
+        this.permissionDesc = permissionDesc;
+    }
+
+    public char getDelFlag() {
+        return delFlag;
+    }
+
+    public void setDelFlag(char delFlag) {
+        this.delFlag = delFlag;
+    }
+
+    @Override
+    public String toString() {
+        return "Permission{" +
+                "permissionId='" + permissionId + '\'' +
+                ", parentId='" + parentId + '\'' +
+                ", permissionName='" + permissionName + '\'' +
+                ", permissionPath='" + permissionPath + '\'' +
+                ", requestMethod='" + requestMethod + '\'' +
+                ", permissionDesc='" + permissionDesc + '\'' +
+                ", delFlag=" + delFlag +
+                '}';
+    }
 }

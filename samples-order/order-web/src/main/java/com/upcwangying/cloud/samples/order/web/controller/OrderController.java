@@ -37,7 +37,8 @@ import com.upcwangying.cloud.samples.order.common.entity.OrderMainOutput;
 import com.upcwangying.cloud.samples.order.web.entity.OrderMain;
 import com.upcwangying.cloud.samples.order.web.service.OrderService;
 import com.upcwangying.cloud.samples.order.web.utils.BeanCreators;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
@@ -61,8 +62,8 @@ import static com.upcwangying.cloud.samples.core.enums.ResultEnum.DATA_NOT_EXIST
  */
 @RestController
 @RequestMapping("/orders")
-@Slf4j
 public class OrderController {
+    private static Logger log = LoggerFactory.getLogger(OrderController.class);
 
 //    @Value("${eureka.instance.metadata-map.host-mark}")
 //    private String grayMark;

@@ -40,7 +40,8 @@ import com.upcwangying.cloud.samples.order.common.entity.OrderDetailInput;
 import com.upcwangying.cloud.samples.order.web.entity.OrderDetail;
 import com.upcwangying.cloud.samples.order.web.entity.OrderMain;
 import com.upcwangying.cloud.samples.order.web.service.OrderService;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -62,9 +63,9 @@ import static com.upcwangying.cloud.samples.core.constant.Constants.UNDELETED_ST
  * @author WANGY
  */
 @Service
-@Slf4j
 @Transactional
 public class OrderServiceImpl implements OrderService {
+    private static Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
 
     @Autowired
     private OrderMainRepository orderMainRepository;

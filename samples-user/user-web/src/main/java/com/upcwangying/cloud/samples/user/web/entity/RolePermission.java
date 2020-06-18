@@ -26,9 +26,6 @@
 
 package com.upcwangying.cloud.samples.user.web.entity;
 
-import lombok.Data;
-import lombok.ToString;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -38,9 +35,7 @@ import java.io.Serializable;
  *
  * @author WANGY
  */
-@Data
 @Entity
-@ToString
 public class RolePermission implements Serializable {
     private static final long serialVersionUID = 83865404170243264L;
 
@@ -64,4 +59,46 @@ public class RolePermission implements Serializable {
      * 删除标识
      */
     private char delFlag;
+
+    public String getRolePermissionId() {
+        return rolePermissionId;
+    }
+
+    public void setRolePermissionId(String rolePermissionId) {
+        this.rolePermissionId = rolePermissionId;
+    }
+
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getPermissionId() {
+        return permissionId;
+    }
+
+    public void setPermissionId(String permissionId) {
+        this.permissionId = permissionId;
+    }
+
+    public char getDelFlag() {
+        return delFlag;
+    }
+
+    public void setDelFlag(char delFlag) {
+        this.delFlag = delFlag;
+    }
+
+    @Override
+    public String toString() {
+        return "RolePermission{" +
+                "rolePermissionId='" + rolePermissionId + '\'' +
+                ", roleId='" + roleId + '\'' +
+                ", permissionId='" + permissionId + '\'' +
+                ", delFlag=" + delFlag +
+                '}';
+    }
 }

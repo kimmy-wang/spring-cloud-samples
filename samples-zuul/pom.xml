@@ -114,12 +114,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
             <groupId>com.upcwangying.cloud.see</groupId>
             <artifactId>spring-cloud-starter-see-auth</artifactId>
             <version>1.0.3</version>

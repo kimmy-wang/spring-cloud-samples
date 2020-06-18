@@ -26,11 +26,13 @@
 
 package com.upcwangying.cloud.samples.user.web.service.impl;
 
+import com.upcwangying.cloud.samples.user.web.controller.PermissionController;
 import com.upcwangying.cloud.samples.user.web.repository.PermissionRepository;
 import com.upcwangying.cloud.samples.user.web.entity.Permission;
 import com.upcwangying.cloud.samples.user.web.service.PermissionService;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,8 +47,8 @@ import static com.upcwangying.cloud.samples.core.constant.Constants.UNDELETED_ST
  * @author WANGY
  */
 @Service
-@Slf4j
 public class PermissionServiceImpl implements PermissionService {
+    private static Logger log = LoggerFactory.getLogger(PermissionServiceImpl.class);
 
     @Autowired
     private PermissionRepository permissionRepository;

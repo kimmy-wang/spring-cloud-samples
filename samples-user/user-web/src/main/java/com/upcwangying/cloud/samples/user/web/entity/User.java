@@ -26,9 +26,6 @@
 
 package com.upcwangying.cloud.samples.user.web.entity;
 
-import lombok.Data;
-import lombok.ToString;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -38,8 +35,6 @@ import java.io.Serializable;
  *
  * @author WANGY
  */
-@Data
-@ToString
 @Entity
 public class User implements Serializable {
     private static final long serialVersionUID = -6919496576458903349L;
@@ -70,4 +65,54 @@ public class User implements Serializable {
      */
     private char delFlag;
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUserDesc() {
+        return userDesc;
+    }
+
+    public void setUserDesc(String userDesc) {
+        this.userDesc = userDesc;
+    }
+
+    public char getDelFlag() {
+        return delFlag;
+    }
+
+    public void setDelFlag(char delFlag) {
+        this.delFlag = delFlag;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", userDesc='" + userDesc + '\'' +
+                ", delFlag=" + delFlag +
+                '}';
+    }
 }

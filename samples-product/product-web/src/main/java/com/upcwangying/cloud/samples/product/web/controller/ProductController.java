@@ -37,8 +37,9 @@ import com.upcwangying.cloud.samples.product.dubbo.DubboProductClient;
 import com.upcwangying.cloud.samples.product.web.entity.Product;
 import com.upcwangying.cloud.samples.product.web.service.ProductService;
 import com.upcwangying.cloud.samples.product.web.utils.BeanCreators;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
@@ -67,8 +68,8 @@ import java.util.stream.Collectors;
 @RestController
 @Service(protocol = "dubbo")
 @RequestMapping("/products")
-@Slf4j
 public class ProductController implements DubboProductClient {
+    private static Logger log = LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
     private ProductService productService;

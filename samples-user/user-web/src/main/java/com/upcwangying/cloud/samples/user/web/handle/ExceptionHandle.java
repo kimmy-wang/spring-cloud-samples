@@ -28,7 +28,9 @@ package com.upcwangying.cloud.samples.user.web.handle;
 
 import com.upcwangying.cloud.samples.core.utils.ResultVOUtils;
 import com.upcwangying.cloud.samples.core.vo.ResultVO;
-import lombok.extern.slf4j.Slf4j;
+import com.upcwangying.cloud.samples.user.web.controller.PermissionController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -45,8 +47,8 @@ import static com.upcwangying.cloud.samples.core.enums.ResultEnum.PARAM_ERROR;
  * @author WANGY
  */
 @ControllerAdvice
-@Slf4j
 public class ExceptionHandle {
+    private static Logger log = LoggerFactory.getLogger(ExceptionHandle.class);
 
     @ExceptionHandler(value = Exception.class)
     @ResponseBody

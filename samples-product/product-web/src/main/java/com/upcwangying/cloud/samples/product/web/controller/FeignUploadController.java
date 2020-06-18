@@ -26,7 +26,8 @@
 
 package com.upcwangying.cloud.samples.product.web.controller;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,8 +39,8 @@ import org.springframework.web.multipart.MultipartFile;
  * @author WANGY
  */
 @RestController
-@Slf4j
 public class FeignUploadController {
+    private static Logger log = LoggerFactory.getLogger(FeignUploadController.class);
 
     @PostMapping(value = "/uploadFile/server", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public String fileUploadServer(MultipartFile file) {

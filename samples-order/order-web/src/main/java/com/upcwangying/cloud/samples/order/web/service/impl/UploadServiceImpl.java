@@ -30,7 +30,8 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.upcwangying.cloud.samples.product.feign.FileUploadClient;
 import com.upcwangying.cloud.samples.core.exception.FallbackException;
 import com.upcwangying.cloud.samples.order.web.service.UploadService;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -41,8 +42,8 @@ import org.springframework.web.multipart.MultipartFile;
  * @author WANGY
  */
 @Service
-@Slf4j
 public class UploadServiceImpl implements UploadService {
+    private static Logger log = LoggerFactory.getLogger(UploadServiceImpl.class);
 
     @Autowired
     private FileUploadClient fileUploadClient;

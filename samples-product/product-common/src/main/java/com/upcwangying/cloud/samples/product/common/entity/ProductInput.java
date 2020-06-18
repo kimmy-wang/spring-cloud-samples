@@ -27,7 +27,6 @@
 package com.upcwangying.cloud.samples.product.common.entity;
 
 import com.upcwangying.cloud.samples.core.validation.constraints.StringMaxLength;
-import lombok.Data;
 
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Min;
@@ -40,7 +39,6 @@ import java.math.BigDecimal;
  *
  * @author WANGY
  */
-@Data
 public class ProductInput implements Serializable {
     private static final long serialVersionUID = 7909293927779853866L;
 
@@ -57,4 +55,44 @@ public class ProductInput implements Serializable {
 
     @Min(value = 1, message = "库存不能小于{value}")
     private long stock;
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getProductDesc() {
+        return productDesc;
+    }
+
+    public void setProductDesc(String productDesc) {
+        this.productDesc = productDesc;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public long getStock() {
+        return stock;
+    }
+
+    public void setStock(long stock) {
+        this.stock = stock;
+    }
 }

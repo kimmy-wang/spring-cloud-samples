@@ -26,8 +26,6 @@
 
 package com.upcwangying.cloud.samples.order.common.entity;
 
-import lombok.Data;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -36,7 +34,6 @@ import java.math.BigDecimal;
  *
  * @author WANGY
  */
-@Data
 public class OrderMainOutput implements Serializable {
     private static final long serialVersionUID = -4510810296759591299L;
 
@@ -55,4 +52,27 @@ public class OrderMainOutput implements Serializable {
      */
     private BigDecimal orderPrice;
 
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(String buyer) {
+        this.buyer = buyer;
+    }
+
+    public BigDecimal getOrderPrice() {
+        return orderPrice;
+    }
+
+    public void setOrderPrice(BigDecimal orderPrice) {
+        this.orderPrice = orderPrice;
+    }
 }
