@@ -16,6 +16,7 @@
     <modules>
         <module>user-common</module>
         <module>user-feign</module>
+        <module>user-dubbo</module>
         <module>user-web</module>
     </modules>
 
