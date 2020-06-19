@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.upcwangying.cloud.samples</groupId>
         <artifactId>samples-product</artifactId>
-        <version>0.2.1-SNAPSHOT</version>
+        <version>0.2.1.RELEASE</version>
     </parent>
     <groupId>com.upcwangying.cloud.samples.product</groupId>
     <artifactId>product-web</artifactId>
