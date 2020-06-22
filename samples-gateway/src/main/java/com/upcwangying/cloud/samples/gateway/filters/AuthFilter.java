@@ -59,7 +59,7 @@ public class AuthFilter implements GlobalFilter {
             mutate.header("x-user-id", userMap.get("id"));
             mutate.header("x-user-name", userMap.get("user"));
             mutate.header("x-user-serviceName", uri.getHost());
-        }else {
+        } else {
             throw new PermissionException("user not exist, please check");
         }
         ServerHttpRequest buildReuqest =  mutate.build();
