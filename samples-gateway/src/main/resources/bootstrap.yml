@@ -62,9 +62,9 @@ server:
   ssl:
     enabled: true
     key-alias: samples
-    key-password: 09083213
+    key-password: samples
     key-store: classpath:samples.jks
-    key-store-password: 09083213
+    key-store-password: samples
     key-store-type: JKS
 
 # 加密所需的salt(盐)

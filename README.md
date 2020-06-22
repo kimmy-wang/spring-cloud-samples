@@ -177,6 +177,8 @@ Dmaven.test.skip=true, 不执行测试用例，也不编译测试用例类
 
 `mvn clean deploy -projects fundebug-java,fundebug-spring -P release -Dgpg.passphrase=yourpassword -Ddockerfile.skip=true -DskipTests`
 
+`keytool -genkey -alias samples -keypass samples -keyalg RSA -keysize 2048 -validity 30 -keystore samples.jks -storepass samples`
+
 ## TODO
 
 - [X] Netflix Eureka切换成Nacos Discovery
