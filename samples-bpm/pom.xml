@@ -2,6 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>bpm-web</module>
+        <module>bpm-core</module>
+        <module>bpm-sdk</module>
+    </modules>
     <parent>
         <artifactId>samples-parent</artifactId>
         <groupId>com.upcwangying.cloud.samples</groupId>
@@ -10,6 +15,7 @@
     </parent>
     <artifactId>samples-bpm</artifactId>
     <name>samples-bpm</name>
+    <packaging>pom</packaging>
     <description>业务流程管理模块</description>
 
     <properties>
