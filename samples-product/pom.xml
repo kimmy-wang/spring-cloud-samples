@@ -59,6 +59,11 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.upcwangying.cloud.samples.product</groupId>
+                <artifactId>product-ws</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.spring4all</groupId>
                 <artifactId>swagger-spring-boot-starter</artifactId>
                 <version>${swagger-spring.version}</version>

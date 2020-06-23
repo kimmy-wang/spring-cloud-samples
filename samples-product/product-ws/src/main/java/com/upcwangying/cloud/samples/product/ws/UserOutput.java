@@ -23,7 +23,7 @@
  *
  */
 
-package com.upcwangying.cloud.samples.order.web.ws;
+package com.upcwangying.cloud.samples.product.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,20 +31,22 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
-@XmlRootElement(namespace = "http://upcwangying.com/ws/demo", name = "UserOutput")
+import static com.upcwangying.cloud.samples.product.ws.WsConfig.NAMESPACE;
+
+@XmlRootElement(namespace = NAMESPACE, name = "UserOutput")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class UserOutput {
 
-    @XmlElement(namespace = "http://upcwangying.com/ws/demo")
+    @XmlElement(namespace = NAMESPACE)
     private String username;
 
-    @XmlElement(namespace = "http://upcwangying.com/ws/demo")
+    @XmlElement(namespace = NAMESPACE)
     private String gender;
 
-    @XmlElement(namespace = "http://upcwangying.com/ws/demo")
+    @XmlElement(namespace = NAMESPACE)
     private Date birthday;
 
-    @XmlElement(namespace = "http://upcwangying.com/ws/demo")
+    @XmlElement(namespace = NAMESPACE)
     private String location;
 
     public String getUsername() {

@@ -23,18 +23,20 @@
  *
  */
 
-package com.upcwangying.cloud.samples.order.web.ws;
+package com.upcwangying.cloud.samples.product.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(namespace = "http://upcwangying.com/ws/demo", name = "UserInput")
+import static com.upcwangying.cloud.samples.product.ws.WsConfig.NAMESPACE;
+
+@XmlRootElement(namespace = NAMESPACE, name = "UserInput")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class UserInput {
 
-    @XmlElement(namespace = "http://upcwangying.com/ws/demo")
+    @XmlElement(namespace = NAMESPACE)
     private String userId;
 
     public String getUserId() {

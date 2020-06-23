@@ -23,7 +23,7 @@
  *
  */
 
-package com.upcwangying.cloud.samples.order.web.ws;
+package com.upcwangying.cloud.samples.product.ws;
 
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -32,10 +32,12 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import java.util.Date;
 
+import static com.upcwangying.cloud.samples.product.ws.WsConfig.NAMESPACE;
+
 @Endpoint
 public class UserEndpoint {
 
-    @PayloadRoot(namespace = "http://upcwangying.com/ws/demo", localPart = "UserInput")
+    @PayloadRoot(namespace = NAMESPACE, localPart = "UserInput")
     @ResponsePayload
     public UserOutput findUserById(@RequestPayload UserInput request) throws Exception {
 

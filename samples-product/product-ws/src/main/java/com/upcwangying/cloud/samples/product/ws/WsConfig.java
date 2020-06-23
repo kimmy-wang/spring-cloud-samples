@@ -23,7 +23,7 @@
  *
  */
 
-package com.upcwangying.cloud.samples.order.web.ws;
+package com.upcwangying.cloud.samples.product.ws;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -42,6 +42,9 @@ import org.springframework.xml.xsd.XsdSchema;
 @Configuration
 public class WsConfig extends WsConfigurerAdapter {
 
+    public static final String NAMESPACE = "http://upcwangying.com/ws/demo";
+    public static final String TARGET_NAMESPACE = "http://upcwangying.com/webservice";
+
     @Bean
     public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
@@ -55,7 +58,7 @@ public class WsConfig extends WsConfigurerAdapter {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("UserInput");
         wsdl11Definition.setLocationUri("/ws");
-        wsdl11Definition.setTargetNamespace("http://upcwangying.com/webservice");
+        wsdl11Definition.setTargetNamespace(TARGET_NAMESPACE);
         wsdl11Definition.setSchema(usersSchema);
         return wsdl11Definition;
     }
@@ -65,7 +68,7 @@ public class WsConfig extends WsConfigurerAdapter {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("UserInput");
         wsdl11Definition.setLocationUri("/ws");
-        wsdl11Definition.setTargetNamespace("http://upcwangying.com/webservice");
+        wsdl11Definition.setTargetNamespace(TARGET_NAMESPACE);
         wsdl11Definition.setSchema(demosSchema);
         return wsdl11Definition;
     }
