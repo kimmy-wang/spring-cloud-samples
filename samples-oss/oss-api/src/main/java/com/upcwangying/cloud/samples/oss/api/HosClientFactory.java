@@ -23,19 +23,34 @@
  *
  */
 
-package com.upcwangying.cloud.samples.oss.common;
+package com.upcwangying.cloud.samples.oss.api;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author WANGY
  */
-public interface OssHeaders {
+public class HosClientFactory {
 
-    public static final String REQUEST_RANGE = "x-oss-range";
-    public static final String COMMON_OBJ_ID = "x-oss-id";
-    public static final String COMMON_BUCKET_NAME = "x-oss-bucket";
-    public static final String COMMON_ATTR_PREFIX = "x-oss-attr_";
-    public static final String RESPONSE_OBJ_LENGTH = "x-oss-length";
-    public static final String COMMON_OBJ_KEY = "x-oss-key";
-    public static final String COMMON_OBJ_BUCKET = "x-oss-bucket";
+    private static Map<String, OssClient> clientCache = new ConcurrentHashMap<>();
 
+    /**
+     * create mosclient by endpoints and token.
+     *
+     * @param endpoints seperated by comma,eg:http://127.0.0.1:80801,http://127.0.0.1:80802
+     * @param token auth token
+     * @return client
+     */
+    public static OssClient getOrClient(String endpoints, String token) {
+        String key = endpoints + "_" + token;
+        if (clientCache.containsKey(key)) {
+            return clientCache.get(key);
+        } else {
+            OssClient client = new OssClientImpl(endpoints, token);
+            clientCache.put(key, client);
+            return client;
+        }
+
+    }
 }

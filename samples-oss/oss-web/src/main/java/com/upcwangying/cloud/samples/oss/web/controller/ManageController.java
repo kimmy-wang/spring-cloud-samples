@@ -43,7 +43,7 @@ import java.util.List;
  * @author WANGY
  */
 @RestController
-@RequestMapping("hos/v1/sys/")
+@RequestMapping("oss/v1/sys/")
 public class ManageController extends BaseController {
 
     @Autowired
