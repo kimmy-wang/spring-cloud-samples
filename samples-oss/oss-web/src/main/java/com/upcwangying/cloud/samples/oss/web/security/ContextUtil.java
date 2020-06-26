@@ -23,58 +23,29 @@
  *
  */
 
-package com.upcwangying.cloud.samples.oss.common;
+package com.upcwangying.cloud.samples.oss.web.security;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import okhttp3.Response;
+import com.upcwangying.cloud.samples.oss.core.entity.UserInfo;
 
 /**
  * @author WANGY
  */
-public class OosObject {
-    private ObjectMetaData metaData;
+public class ContextUtil {
 
-    private InputStream content;
+    public final static String SESSION_KEY = "user_token";
 
-    private Response response;
+    private static ThreadLocal<UserInfo> userInfoThreadLocal = new ThreadLocal<UserInfo>();
 
-    public OosObject() {
-
+    public static UserInfo getCurrentUser() {
+        return userInfoThreadLocal.get();
     }
 
-    public OosObject(Response response) {
-        this.response = response;
+    static void setCurrentUser(UserInfo userInfo) {
+        userInfoThreadLocal.set(userInfo);
     }
 
-    public void close() {
-        try {
-            if (content != null) {
-                this.content.close();
-            }
-            if (response != null) {
-                this.response.close();
-            }
-        } catch (IOException ioe) {
-            //nothing to do
-        }
-    }
-
-    public ObjectMetaData getMetaData() {
-        return metaData;
-    }
-
-    public void setMetaData(ObjectMetaData metaData) {
-        this.metaData = metaData;
-    }
-
-    public InputStream getContent() {
-        return content;
-    }
-
-    public void setContent(InputStream content) {
-        this.content = content;
+    static void clear() {
+        userInfoThreadLocal.remove();
     }
 
 }

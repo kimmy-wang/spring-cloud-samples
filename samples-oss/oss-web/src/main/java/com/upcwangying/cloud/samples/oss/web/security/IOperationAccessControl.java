@@ -23,16 +23,26 @@
  *
  */
 
-package com.upcwangying.cloud.samples.oss.web;
+package com.upcwangying.cloud.samples.oss.web.security;
+
+import com.upcwangying.cloud.samples.oss.core.entity.UserInfo;
+import com.upcwangying.cloud.samples.oss.core.enums.SystemRole;
 
 /**
- * Hello world!
- *
+ * @author WANGY
  */
-public class App
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+public interface IOperationAccessControl {
+
+    UserInfo checkLogin(String userName, String password);
+
+    boolean checkSystemRole(SystemRole systemRole1, SystemRole systemRole2);
+
+    boolean checkSystemRole(SystemRole systemRole1, String userId);
+
+    boolean checkTokenOwner(String userName, String token);
+
+    boolean checkBucketOwner(String userName, String bucketName);
+
+    boolean checkPermission(String token, String bucket);
+
 }
