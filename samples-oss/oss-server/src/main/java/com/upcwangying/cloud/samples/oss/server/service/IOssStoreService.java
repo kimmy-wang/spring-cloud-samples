@@ -26,8 +26,8 @@
 package com.upcwangying.cloud.samples.oss.server.service;
 
 import com.upcwangying.cloud.samples.oss.common.ObjectListResult;
-import com.upcwangying.cloud.samples.oss.common.OosObject;
-import com.upcwangying.cloud.samples.oss.common.OosObjectSummary;
+import com.upcwangying.cloud.samples.oss.common.OssObject;
+import com.upcwangying.cloud.samples.oss.common.OssObjectSummary;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -37,15 +37,15 @@ import java.util.Map;
 /**
  * @author WANGY
  */
-public interface IOosStoreService {
+public interface IOssStoreService {
     void createSeqTable() throws IOException;
 
     void put(String bucket, String key, ByteBuffer content, long length, String mediaType,
              Map<String, String> properties) throws Exception;
 
-    OosObjectSummary getSummary(String bucket, String key) throws IOException;
+    OssObjectSummary getSummary(String bucket, String key) throws IOException;
 
-    List<OosObjectSummary> list(String bucket, String startKey, String endKey)
+    List<OssObjectSummary> list(String bucket, String startKey, String endKey)
             throws IOException;
 
     ObjectListResult listDir(String bucket, String dir,
@@ -54,7 +54,7 @@ public interface IOosStoreService {
     ObjectListResult listByPrefix(String bucket, String dir, String keyPrefix, String start,
                                   int maxCount) throws IOException;
 
-    OosObject getObject(String bucket, String key) throws IOException;
+    OssObject getObject(String bucket, String key) throws IOException;
 
     void deleteObject(String bucket, String key) throws Exception;
 

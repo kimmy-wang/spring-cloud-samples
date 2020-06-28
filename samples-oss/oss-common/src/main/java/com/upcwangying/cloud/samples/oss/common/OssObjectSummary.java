@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * @author WANGY
  */
-public class OosObjectSummary implements Comparable<OosObjectSummary>, Serializable {
+public class OssObjectSummary implements Comparable<OssObjectSummary>, Serializable {
     private String id;
     private String key;
     private String name;
@@ -47,7 +47,7 @@ public class OosObjectSummary implements Comparable<OosObjectSummary>, Serializa
         return attrs != null ? attrs.get("content-encoding") : null;
     }
     @Override
-    public int compareTo(OosObjectSummary o) {
+    public int compareTo(OssObjectSummary o) {
         return this.getKey().compareTo(o.getKey());
     }
 

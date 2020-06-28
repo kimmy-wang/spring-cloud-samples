@@ -28,11 +28,11 @@ package com.upcwangying.cloud.samples.oss.server.service.impl;
 import com.google.common.base.Strings;
 import com.upcwangying.cloud.samples.oss.common.ObjectListResult;
 import com.upcwangying.cloud.samples.oss.common.ObjectMetaData;
-import com.upcwangying.cloud.samples.oss.common.OosObject;
-import com.upcwangying.cloud.samples.oss.common.OosObjectSummary;
+import com.upcwangying.cloud.samples.oss.common.OssObject;
+import com.upcwangying.cloud.samples.oss.common.OssObjectSummary;
 import com.upcwangying.cloud.samples.oss.common.utils.JsonUtil;
 import com.upcwangying.cloud.samples.oss.server.service.IHdfsService;
-import com.upcwangying.cloud.samples.oss.server.service.IOosStoreService;
+import com.upcwangying.cloud.samples.oss.server.service.IOssStoreService;
 import com.upcwangying.cloud.samples.oss.server.utils.OosUtil;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -69,15 +69,15 @@ import java.util.*;
 /**
  * @author WANGY
  */
-public class OosStoreServiceImpl implements IOosStoreService {
-    private static Logger logger = Logger.getLogger(OosStoreServiceImpl.class);
+public class OssStoreServiceImpl implements IOssStoreService {
+    private static Logger logger = Logger.getLogger(OssStoreServiceImpl.class);
     private Connection connection = null;
     private IHdfsService fileStore;
     private String zkUrls;
     private CuratorFramework zkClient;
     private Reaper reaper;
 
-    public OosStoreServiceImpl(Connection connection, IHdfsService fileStore, String zkurls)
+    public OssStoreServiceImpl(Connection connection, IHdfsService fileStore, String zkurls)
             throws IOException {
         this.connection = connection;
         this.fileStore = fileStore;
@@ -165,7 +165,7 @@ public class OosStoreServiceImpl implements IOosStoreService {
     }
 
     @Override
-    public OosObjectSummary getSummary(String bucket, String key) throws IOException {
+    public OssObjectSummary getSummary(String bucket, String key) throws IOException {
         if (key.endsWith("/")) {
             Result result = HBaseService
                     .getRow(connection, OosUtil.getDirTableName(bucket), key);
@@ -190,7 +190,7 @@ public class OosStoreServiceImpl implements IOosStoreService {
     }
 
     @Override
-    public List<OosObjectSummary> list(String bucket, String startKey, String endKey)
+    public List<OssObjectSummary> list(String bucket, String startKey, String endKey)
             throws IOException {
 
         String dir1 = startKey.substring(0, startKey.lastIndexOf("/") + 1).trim();
@@ -205,7 +205,7 @@ public class OosStoreServiceImpl implements IOosStoreService {
         String name2 = endKey.substring(startKey.lastIndexOf("/") + 1);
         String seqId = this.getDirSeqId(bucket, dir1);
         //查询dir1中大于name1的全部文件
-        List<OosObjectSummary> keys = new ArrayList<>();
+        List<OssObjectSummary> keys = new ArrayList<>();
         if (seqId != null && name1.length() > 0) {
             byte[] max = Bytes.createMaxByteArray(100);
             byte[] tail = Bytes.add(Bytes.toBytes(seqId), max);
@@ -217,7 +217,7 @@ public class OosStoreServiceImpl implements IOosStoreService {
                     .scanner(connection, OosUtil.getObjTableName(bucket), start, tail);
             Result result = null;
             while ((result = scanner1.next()) != null) {
-                OosObjectSummary summary = this.resultToObjectSummary(result, bucket, dir1);
+                OssObjectSummary summary = this.resultToObjectSummary(result, bucket, dir1);
                 keys.add(summary);
             }
             if (scanner1 != null) {
@@ -260,11 +260,11 @@ public class OosStoreServiceImpl implements IOosStoreService {
         int maxCount1 = maxCount + 2;
         Result dirResult = HBaseService
                 .getRow(connection, OosUtil.getDirTableName(bucket), get);
-        List<OosObjectSummary> subDirs = null;
+        List<OssObjectSummary> subDirs = null;
         if (!dirResult.isEmpty()) {
             subDirs = new ArrayList<>();
             for (Cell cell : dirResult.rawCells()) {
-                OosObjectSummary summary = new OosObjectSummary();
+                OssObjectSummary summary = new OssObjectSummary();
                 byte[] qualifierBytes = new byte[cell.getQualifierLength()];
                 CellUtil.copyQualifierTo(cell, qualifierBytes, 0);
                 String name = Bytes.toString(qualifierBytes);
@@ -292,10 +292,10 @@ public class OosStoreServiceImpl implements IOosStoreService {
         logger.info("scan start: " + Bytes.toString(objStart) + " - ");
         ResultScanner objScanner = HBaseService
                 .scanner(connection, OosUtil.getObjTableName(bucket), objScan);
-        List<OosObjectSummary> objectSummaryList = new ArrayList<>();
+        List<OssObjectSummary> objectSummaryList = new ArrayList<>();
         Result result = null;
         while (objectSummaryList.size() < maxCount1 && (result = objScanner.next()) != null) {
-            OosObjectSummary summary = this.resultToObjectSummary(result, bucket, dir);
+            OssObjectSummary summary = this.resultToObjectSummary(result, bucket, dir);
             objectSummaryList.add(summary);
         }
         if (objScanner != null) {
@@ -307,7 +307,7 @@ public class OosStoreServiceImpl implements IOosStoreService {
         }
         Collections.sort(objectSummaryList);
         ObjectListResult listResult = new ObjectListResult();
-        OosObjectSummary nextMarkerObj =
+        OssObjectSummary nextMarkerObj =
                 objectSummaryList.size() > maxCount ? objectSummaryList.get(objectSummaryList.size() - 1)
                         : null;
         if (nextMarkerObj != null) {
@@ -343,11 +343,11 @@ public class OosStoreServiceImpl implements IOosStoreService {
         int maxCount1 = maxCount + 2;
         Result dirResult = HBaseService
                 .getRow(connection, OosUtil.getDirTableName(bucket), dir, filterList);
-        List<OosObjectSummary> subDirs = null;
+        List<OssObjectSummary> subDirs = null;
         if (!dirResult.isEmpty()) {
             subDirs = new ArrayList<>();
             for (Cell cell : dirResult.rawCells()) {
-                OosObjectSummary summary = new OosObjectSummary();
+                OssObjectSummary summary = new OssObjectSummary();
                 byte[] qualifierBytes = new byte[cell.getQualifierLength()];
                 CellUtil.copyQualifierTo(cell, qualifierBytes, 0);
                 String name = Bytes.toString(qualifierBytes);
@@ -375,10 +375,10 @@ public class OosStoreServiceImpl implements IOosStoreService {
         logger.info("scan start: " + Bytes.toString(objStart) + " - ");
         ResultScanner objScanner = HBaseService
                 .scanner(connection, OosUtil.getObjTableName(bucket), objScan);
-        List<OosObjectSummary> objectSummaryList = new ArrayList<>();
+        List<OssObjectSummary> objectSummaryList = new ArrayList<>();
         Result result = null;
         while (objectSummaryList.size() < maxCount1 && (result = objScanner.next()) != null) {
-            OosObjectSummary summary = this.resultToObjectSummary(result, bucket, dir);
+            OssObjectSummary summary = this.resultToObjectSummary(result, bucket, dir);
             objectSummaryList.add(summary);
         }
         if (objScanner != null) {
@@ -390,7 +390,7 @@ public class OosStoreServiceImpl implements IOosStoreService {
         }
         Collections.sort(objectSummaryList);
         ObjectListResult listResult = new ObjectListResult();
-        OosObjectSummary nextMarkerObj =
+        OssObjectSummary nextMarkerObj =
                 objectSummaryList.size() > maxCount ? objectSummaryList.get(objectSummaryList.size() - 1)
                         : null;
         if (nextMarkerObj != null) {
@@ -412,7 +412,7 @@ public class OosStoreServiceImpl implements IOosStoreService {
     }
 
     @Override
-    public OosObject getObject(String bucket, String key) throws IOException {
+    public OssObject getObject(String bucket, String key) throws IOException {
         if (key.endsWith("/")) {
             Result result = HBaseService
                     .getRow(connection, OosUtil.getDirTableName(bucket), key);
@@ -424,7 +424,7 @@ public class OosStoreServiceImpl implements IOosStoreService {
             metaData.setKey(key);
             metaData.setLastModifyTime(result.rawCells()[0].getTimestamp());
             metaData.setLength(0);
-            OosObject object = new OosObject();
+            OssObject object = new OssObject();
             object.setMetaData(metaData);
             return object;
         }
@@ -437,7 +437,7 @@ public class OosStoreServiceImpl implements IOosStoreService {
         if (result.isEmpty()) {
             return null;
         }
-        OosObject object = new OosObject();
+        OssObject object = new OssObject();
         if (result.containsNonEmptyColumn(OosUtil.OBJ_CONT_CF_BYTES,
                 OosUtil.OBJ_CONT_QUALIFIER)) {
             ByteArrayInputStream bas = new ByteArrayInputStream(
@@ -558,7 +558,7 @@ public class OosStoreServiceImpl implements IOosStoreService {
         return dirSeqId;
     }
 
-    private void getDirAllFiles(String bucket, String dir, String seqId, List<OosObjectSummary> keys,
+    private void getDirAllFiles(String bucket, String dir, String seqId, List<OssObjectSummary> keys,
                                 String endKey) throws IOException {
 
         byte[] max = Bytes.createMaxByteArray(100);
@@ -578,7 +578,7 @@ public class OosStoreServiceImpl implements IOosStoreService {
                 .scanner(connection, OosUtil.getObjTableName(bucket), scan);
         Result result = null;
         while ((result = scanner.next()) != null) {
-            OosObjectSummary summary = this.resultToObjectSummary(result, bucket, dir);
+            OssObjectSummary summary = this.resultToObjectSummary(result, bucket, dir);
             keys.add(summary);
         }
         if (scanner != null) {
@@ -586,9 +586,9 @@ public class OosStoreServiceImpl implements IOosStoreService {
         }
     }
 
-    private OosObjectSummary resultToObjectSummary(Result result, String bucket, String dir)
+    private OssObjectSummary resultToObjectSummary(Result result, String bucket, String dir)
             throws IOException {
-        OosObjectSummary summary = new OosObjectSummary();
+        OssObjectSummary summary = new OssObjectSummary();
         long timestamp = result.rawCells()[0].getTimestamp();
         summary.setLastModifyTime(timestamp);
         String id = new String(result.getRow());
@@ -612,8 +612,8 @@ public class OosStoreServiceImpl implements IOosStoreService {
         return summary;
     }
 
-    private OosObjectSummary dirObjectToSummary(Result result, String bucket, String dir) {
-        OosObjectSummary summary = new OosObjectSummary();
+    private OssObjectSummary dirObjectToSummary(Result result, String bucket, String dir) {
+        OssObjectSummary summary = new OssObjectSummary();
         String id = Bytes.toString(result.getRow());
         summary.setId(id);
         summary.setAttrs(new HashMap<>(0));

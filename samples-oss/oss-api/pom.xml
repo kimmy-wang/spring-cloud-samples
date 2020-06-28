@@ -12,6 +12,25 @@
   <name>oss-api</name>
   <description>oss-api</description>
 
+  <dependencies>
+    <dependency>
+      <groupId>com.upcwangying.cloud.samples.oss</groupId>
+      <artifactId>oss-common</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>okhttp</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
   <build>
     <finalName>oss-api</finalName>
   </build>

@@ -38,7 +38,7 @@ public class ObjectListResult {
     private int maxKeyNumber;
     private int objectCount;
     private String listId;
-    private List<OosObjectSummary> objectList;
+    private List<OssObjectSummary> objectList;
 
     public String getListId() {
         return listId;
@@ -80,11 +80,11 @@ public class ObjectListResult {
         this.objectCount = objectCount;
     }
 
-    public List<OosObjectSummary> getObjectList() {
+    public List<OssObjectSummary> getObjectList() {
         return objectList;
     }
 
-    public void setObjectList(List<OosObjectSummary> objectList) {
+    public void setObjectList(List<OssObjectSummary> objectList) {
         this.objectList = objectList;
     }
 
