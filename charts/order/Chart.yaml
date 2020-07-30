@@ -21,3 +21,26 @@ version: 0.1.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: 1.16.0
+icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+
+keywords:
+  - microservices
+  - samples
+  - cloud-native
+  - spring-cloud
+  - spring-boot
+  - sentinel
+  - nacos
+  - eureka
+  - zuul
+  - hystrix
+  - feign
+
+home: https://upcwangying.com
+
+sources:
+  - https://github.com/upcwangying.com/spring-cloud-samples
+
+maintainers:
+  - name: upcwangying
+    email: upcwangying@gmail.com
