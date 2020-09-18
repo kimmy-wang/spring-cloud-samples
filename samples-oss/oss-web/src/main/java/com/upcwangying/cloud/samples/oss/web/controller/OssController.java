@@ -201,19 +201,17 @@ public class OssController extends BaseController {
                 return "object content could not be empty";
             }
 
-            if (file != null) {
-                if (file.getSize() > MAX_FILE_IN_MEMORY) {
-                    distFile = new File(TMP_DIR + File.separator + UUID.randomUUID().toString());
-                    file.transferTo(distFile);
-                    file.getInputStream().close();
-                    buffer = new FileInputStream(distFile).getChannel()
-                            .map(FileChannel.MapMode.READ_ONLY, 0, file.getSize());
-                } else {
-                    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-                    org.apache.commons.io.IOUtils.copy(file.getInputStream(), outputStream);
-                    buffer = ByteBuffer.wrap(outputStream.toByteArray());
-                    file.getInputStream().close();
-                }
+            if (file.getSize() > MAX_FILE_IN_MEMORY) {
+                distFile = new File(TMP_DIR + File.separator + UUID.randomUUID().toString());
+                file.transferTo(distFile);
+                file.getInputStream().close();
+                buffer = new FileInputStream(distFile).getChannel()
+                        .map(FileChannel.MapMode.READ_ONLY, 0, file.getSize());
+            } else {
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                org.apache.commons.io.IOUtils.copy(file.getInputStream(), outputStream);
+                buffer = ByteBuffer.wrap(outputStream.toByteArray());
+                file.getInputStream().close();
             }
             ossStoreService.put(bucket, key, buffer, file.getSize(), mediaType, attrs);
             return "success";
@@ -390,18 +388,16 @@ public class OssController extends BaseController {
         }
         response.setHeader(OssHeaders.COMMON_OBJ_BUCKET, object.getMetaData().getBucket());
         response.setContentType(object.getMetaData().getMediaType());
-        OutputStream outputStream = response.getOutputStream();
-        InputStream inputStream = object.getContent();
-        try {
+        try (
+                OutputStream outputStream = response.getOutputStream();
+                InputStream inputStream = object.getContent()
+        ) {
             byte[] buffer = new byte[readBufferSize];
             int len = -1;
             while ((len = inputStream.read(buffer)) > 0) {
                 outputStream.write(buffer, 0, len);
             }
             response.flushBuffer();
-        } finally {
-            inputStream.close();
-            outputStream.close();
         }
 
     }
