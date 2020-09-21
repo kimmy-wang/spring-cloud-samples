@@ -18,6 +18,7 @@
         <module>product-dubbo</module>
         <module>product-web</module>
         <module>product-feign</module>
+        <module>product-ws</module>
     </modules>
 
     <dependencyManagement>

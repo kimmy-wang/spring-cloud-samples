@@ -18,15 +18,10 @@
 
     <modules>
         <module>samples-core</module>
-        <module>samples-cache</module>
-        <module>samples-mdm</module>
-        <module>samples-oss</module>
         <module>samples-user</module>
         <module>samples-product</module>
         <module>samples-order</module>
-        <module>samples-bpm</module>
         <module>samples-admin</module>
-        <module>samples-data-process</module>
         <module>samples-eureka</module>
         <module>samples-gateway</module>
         <module>samples-hystrix-dashboard</module>
