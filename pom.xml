@@ -6,26 +6,26 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.15.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
-    <groupId>com.upcwangying.cloud.samples</groupId>
-    <artifactId>samples-parent</artifactId>
+    <groupId>com.hdmcp</groupId>
+    <artifactId>hdmcp</artifactId>
     <version>0.2.1.RELEASE</version>
     <packaging>pom</packaging>
-    <name>samples-parent</name>
-    <description> Spring Cloud Samples</description>
-    <url>https://cloud.upcwangying.com</url>
+    <name>hdmcp</name>
+    <description>HuaDi Microservices Cloud Platform</description>
+    <url>https://hdmcp.com</url>
 
     <modules>
-        <module>samples-core</module>
-        <module>samples-user</module>
-        <module>samples-product</module>
-        <module>samples-order</module>
-        <module>samples-admin</module>
-        <module>samples-eureka</module>
-        <module>samples-gateway</module>
-        <module>samples-hystrix-dashboard</module>
-        <module>samples-zuul</module>
+        <module>core</module>
+        <module>user</module>
+        <module>product</module>
+        <module>order</module>
+        <module>admin</module>
+        <module>eureka</module>
+        <module>gateway</module>
+        <module>hystrix-dashboard</module>
+        <module>zuul</module>
     </modules>
 
     <properties>
@@ -53,7 +53,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.upcwangying.cloud.samples.user</groupId>
+                <groupId>com.hdmcp.user</groupId>
                 <artifactId>user-feign</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -75,8 +75,8 @@
             </dependency>
 
             <dependency>
-                <groupId>com.upcwangying.cloud.samples</groupId>
-                <artifactId>samples-core</artifactId>
+                <groupId>com.hdmcp</groupId>
+                <artifactId>core</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

@@ -1,6 +1,6 @@
 ## Spring Cloud Samples
 
-![Maven Central](https://img.shields.io/maven-central/v/com.upcwangying.cloud.samples/samples-parent)
+![Maven Central](https://img.shields.io/maven-central/v/com.hdmcp/hdmcp)
 ![GitHub](https://img.shields.io/github/license/upcwangying/spring-cloud-samples)
 
 这是一个Spring Cloud 样例项目
@@ -48,7 +48,7 @@ AT 模式基于支持**本地 ACID 事务**的**关系型数据库**:
 4. rpc调用完毕后, business通知server提交事务
 5. 每个分支本地事务提交后, 会通知server创建分支事务, 当rpc调用完毕后, business通知server提交全局事务(这个business是不是根据全局事务发起者方法里有没有抛出异常来决定提交或者回滚全局事务)
 
-## samples-zuul 项目
+## zuul 项目
 
 > 相关filter执行顺序
 
@@ -102,7 +102,7 @@ TODO...
 
 ## 测试用例
 
-测试用例在spring-cloud-samples/samples-product/product-web/src/test目录下
+测试用例在hdmcp/product/product-web/src/test目录下
 
 注意
 
@@ -183,8 +183,8 @@ Dmaven.test.skip=true, 不执行测试用例，也不编译测试用例类
 
 - [X] Netflix Eureka切换成Nacos Discovery
 - [X] Spring Cloud Config切换成Nacos Config
-- [X] 原samples-gateway模块更改为samples-zuul模块, 基于Netflix Zuul
-- [X] 新增samples-gateway模块, 基于Spring Cloud Gateway
+- [X] 原gateway模块更改为zuul模块, 基于Netflix Zuul
+- [X] 新增gateway模块, 基于Spring Cloud Gateway
 - [X] Feign切换成Dubbo
 - [ ] Netflix Hystrix切换成Alibaba Sentinel
 - [ ] Samples bpm集成Activiti
