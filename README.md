@@ -1,9 +1,7 @@
-# **hdmcp**
+# **HuaDi Microservices Cloud Platform**
 
 ![Maven Central](https://img.shields.io/maven-central/v/com.hdmcp/hdmcp)
 ![GitHub](https://img.shields.io/github/license/qdhuadi/hdmcp)
-
-**HuaDi Microservices Cloud Platform**
 
 ## 项目依赖
 
