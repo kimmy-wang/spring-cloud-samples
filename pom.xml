@@ -253,8 +253,8 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/upcwangying/spring-cloud-samples</url>
-        <connection>https://github.com/upcwangying/spring-cloud-samples.git</connection>
+        <url>https://github.com/hdmcp/hdmcp</url>
+        <connection>https://github.com/hdmcp/hdmcp.git</connection>
     </scm>
 
 <!--    <repositories>-->

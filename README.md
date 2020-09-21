@@ -1,9 +1,9 @@
-## Spring Cloud Samples
+# **hdmcp**
 
 ![Maven Central](https://img.shields.io/maven-central/v/com.hdmcp/hdmcp)
-![GitHub](https://img.shields.io/github/license/upcwangying/spring-cloud-samples)
+![GitHub](https://img.shields.io/github/license/qdhuadi/hdmcp)
 
-这是一个Spring Cloud 样例项目
+**HuaDi Microservices Cloud Platform**
 
 ## 项目依赖
 
