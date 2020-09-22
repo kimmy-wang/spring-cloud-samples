@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
   admin:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/admin:0.2.1.RELEASE
+    image: registry.cn-qingdao.aliyuncs.com/upcwangying/samples-admin:0.2.1.RELEASE
     restart: on-failure
     networks:
       - samples
@@ -15,7 +15,7 @@ services:
       SERVER_PORT: 8080
 
   gateway:
-    image: registry.cn-qingdao.aliyuncs.com/upcwangying/gateway:0.2.1.RELEASE
+    image: registry.cn-qingdao.aliyuncs.com/upcwangying/samples-gateway:0.2.1.RELEASE
     restart: on-failure
     networks:
       - samples

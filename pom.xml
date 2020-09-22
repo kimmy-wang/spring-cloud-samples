@@ -6,23 +6,31 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.15.RELEASE</version>
-        <relativePath/>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.hdmcp</groupId>
-    <artifactId>hdmcp</artifactId>
+    <groupId>com.upcwangying.cloud.samples</groupId>
+    <artifactId>samples-parent</artifactId>
     <version>0.2.1.RELEASE</version>
     <packaging>pom</packaging>
-    <name>hdmcp</name>
-    <description>HuaDi Microservices Cloud Platform</description>
-    <url>https://hdmcp.com</url>
+    <name>samples-parent</name>
+    <description> Spring Cloud Samples</description>
+    <url>https://cloud.upcwangying.com</url>
 
     <modules>
-        <module>core</module>
-        <module>user</module>
-        <module>product</module>
-        <module>order</module>
-        <module>admin</module>
-        <module>gateway</module>
+        <module>samples-core</module>
+        <module>samples-cache</module>
+        <module>samples-mdm</module>
+        <module>samples-oss</module>
+        <module>samples-user</module>
+        <module>samples-product</module>
+        <module>samples-order</module>
+        <module>samples-bpm</module>
+        <module>samples-admin</module>
+        <module>samples-data-process</module>
+        <module>samples-eureka</module>
+        <module>samples-gateway</module>
+        <module>samples-hystrix-dashboard</module>
+        <module>samples-zuul</module>
     </modules>
 
     <properties>
@@ -50,7 +58,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.hdmcp.user</groupId>
+                <groupId>com.upcwangying.cloud.samples.user</groupId>
                 <artifactId>user-feign</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -72,8 +80,8 @@
             </dependency>
 
             <dependency>
-                <groupId>com.hdmcp</groupId>
-                <artifactId>core</artifactId>
+                <groupId>com.upcwangying.cloud.samples</groupId>
+                <artifactId>samples-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -250,8 +258,8 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/hdmcp/hdmcp</url>
-        <connection>https://github.com/hdmcp/hdmcp.git</connection>
+        <url>https://github.com/upcwangying/spring-cloud-samples</url>
+        <connection>https://github.com/upcwangying/spring-cloud-samples.git</connection>
     </scm>
 
 <!--    <repositories>-->
