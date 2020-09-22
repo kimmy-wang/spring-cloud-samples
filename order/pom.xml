@@ -16,7 +16,6 @@
     <modules>
         <module>order-common</module>
         <module>order-dubbo</module>
-        <module>order-feign</module>
         <module>order-web</module>
     </modules>
 
@@ -49,11 +48,6 @@
             <dependency>
                 <groupId>com.hdmcp.order</groupId>
                 <artifactId>order-dubbo</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.hdmcp.product</groupId>
-                <artifactId>product-feign</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

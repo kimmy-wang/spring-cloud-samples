@@ -22,10 +22,7 @@
         <module>product</module>
         <module>order</module>
         <module>admin</module>
-        <module>eureka</module>
         <module>gateway</module>
-        <module>hystrix-dashboard</module>
-        <module>zuul</module>
     </modules>
 
     <properties>

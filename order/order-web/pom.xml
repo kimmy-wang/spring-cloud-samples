@@ -25,11 +25,6 @@
 
         <dependency>
             <groupId>com.hdmcp.product</groupId>
-            <artifactId>product-feign</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.hdmcp.product</groupId>
             <artifactId>product-dubbo</artifactId>
         </dependency>
 
@@ -67,11 +62,6 @@
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-okhttp</artifactId>
         </dependency>
 
 <!--        <dependency>-->
